@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@200&family=Libre+Baskerville&family=Montserrat&family=Titillium+Web:wght@200&family=VT323&display=swap');
 
 header{
+    position: relative;
+    top: 20px;
     min-height: 14vh;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
     align-items: center;
 }
 
