@@ -1,0 +1,22 @@
+nav a, main a{
+    border: 1px solid white;
+    padding: 8px;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0 0 10px black;
+    border-radius: 10px;
+    margin: 0 5px;
+    box-shadow: 10px 10px 15px  rgba(0, 0, 0, 0.295) ;
+    font-weight: bolder;
+    background-color: rgba(0, 0, 0, 0.178);
+}
+
+nav a:hover, main a:hover{
+    background-color: #ff7700;
+    text-shadow: none;
+}
+
+main a{
+    width: 120px;
+    text-align: center;
+}

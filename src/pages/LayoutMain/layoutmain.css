@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat&family=Titillium+Web:wght@200&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@200&family=Libre+Baskerville&family=Montserrat&family=Titillium+Web:wght@200&family=VT323&display=swap');
+
+header{
+    min-height: 14vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+}
+
+header div{
+    display: flex;
+    gap: 10px;
+}
+
+header img{
+    width: 50px;
+}
+
+header h1{
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Handjet';
+    font-size: 2.5rem;
+}
