@@ -1,4 +1,3 @@
-footer{
-    padding: 5px;
-    min-height: 14vh;
+footer p{
+    text-align: center;
 }

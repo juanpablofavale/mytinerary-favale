@@ -11,8 +11,10 @@ export default function Home() {
                     <Article title='Find your perfect destination' desc='Our app will help you find the perfect path for your next trip. With an easy-to-use interface and a host of itinerary options, planning your next trip has never been easier.'/>
                 </section>
                 <section className='carr'>
-                    <h2>Popular Mytineraries</h2>
-                    <img src="./cataratas.jpg" alt="cataratas" />
+                    <article>
+                        <h2>Popular Mytineraries</h2>
+                        <img src="./cataratas.jpg" alt="cataratas" />
+                    </article>
                 </section>
             </main>
         </LayoutMain>

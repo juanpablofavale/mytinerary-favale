@@ -1,13 +1,11 @@
-nav a, main a{
+/* nav a, main a{
     border: 1px solid white;
     padding: 8px;
     text-decoration: none;
     color: #ffffff;
-    text-shadow: 0 0 10px black;
-    border-radius: 10px;
     margin: 0 5px;
+    text-shadow: 0 0 10px black;
     box-shadow: 10px 10px 15px  rgba(0, 0, 0, 0.295) ;
-    font-weight: bolder;
     background-color: rgba(0, 0, 0, 0.178);
 }
 
@@ -19,4 +17,24 @@ nav a:hover, main a:hover{
 main a{
     width: 120px;
     text-align: center;
+} */
+
+header nav{
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+header nav a, main a{
+    text-decoration: none;
+    color: #ff7700;
+    border: 2px solid #ff7700;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+nav a:hover, main a:hover{
+    background-color: #ff7700;
+    color: white;
 }
