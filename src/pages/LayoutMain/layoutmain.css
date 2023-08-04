@@ -3,7 +3,6 @@
 header{
     position: relative;
     top: 20px;
-    min-height: 14vh;
     display: flex;
     flex-direction: column;
     gap: 20px;

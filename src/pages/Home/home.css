@@ -6,7 +6,7 @@ main section{
 }
 
 main .hero{
-    min-height: 86vh;
+    height: 850px;
 }
 
 main .heroImg, main .carr img{
