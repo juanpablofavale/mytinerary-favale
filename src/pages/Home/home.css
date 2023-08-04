@@ -11,14 +11,13 @@ section{
 .carr{
     color: black;
     padding: 25px 0;
+    background-color: white;
 }
 
 .hero{
     min-height: 100vh;
-    background-image: linear-gradient(#5300018e, #5300018e), url('../mapa.avif');
+    background-image: linear-gradient(#00000088, #00000088), url('../cataratas2.jpg');
     background-repeat: no-repeat;
-    background-position: center;
-    box-shadow: 0px 0px 15px #ff9900;
 }
 /*main section{
     display: flex;

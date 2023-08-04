@@ -27,14 +27,14 @@ header nav{
 
 header nav a, main a{
     text-decoration: none;
-    color: white;
-    border: 2px solid white;
+    color: #ff9900;
+    border: 2px solid #ff9900;
     padding: 10px;
     border-radius: 10px;
     font-weight: bolder;
 }
 
 nav a:hover, main a:hover{
-    background-color: #ff7700;
+    background-color: #ff9900;
     color: white;
 }
