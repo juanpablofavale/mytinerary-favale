@@ -1,0 +1,17 @@
+.carousel{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel button{
+    padding: 15px;
+    background-color: #f0f8ff00;
+    border-radius: 50%;
+}

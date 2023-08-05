@@ -3,7 +3,8 @@
     border-radius: 15px;
     border: 3px solid #0095a0;
     border: 3px solid #ff9900;
-    box-shadow: 10px 10px 15px #00000099;}
+    box-shadow: 10px 10px 15px #00000099;
+}
 
 section{
     display: flex;
@@ -17,6 +18,13 @@ section{
     padding: 25px 0;
     background-color: white;
     border-top: 2px dashed #ff9900;
+}
+
+.carr article{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
 }
 
 .hero{
@@ -34,24 +42,3 @@ section{
     border: 3px solid #0095a0;
     box-shadow: 10px 10px 15px #00000099;
 }
-
-/*main section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-main .hero{
-    height: 86vh;
-}
-
-main .heroImg, main .carr img{
-    width: calc(100% - 70px);
-    border-radius: 15px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.753);
-}
-
-main .carr h2{
-    margin-bottom: 10px;
-}*/

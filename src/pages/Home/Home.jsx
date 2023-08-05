@@ -2,6 +2,7 @@ import LayoutMain from '../LayoutMain/LayoutMain.jsx'
 import Article from '../../components/Article/Article.jsx'
 import Anchor from '../../components/Anchor/Anchor.jsx'
 import './home.css'
+import Carousel from '../../components/Carousel/Carousel.jsx'
 
 export default function Home() {
     return (
@@ -14,7 +15,7 @@ export default function Home() {
                 <section className='carr'>
                     <article>
                         <h2>Popular Mytineraries</h2>
-                        <img src="./cataratas.jpg" alt="cataratas" />
+                        <Carousel />
                     </article>
                 </section>
             </main>
