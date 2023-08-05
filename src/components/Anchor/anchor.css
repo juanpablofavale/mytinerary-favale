@@ -22,7 +22,7 @@ main a{
 header nav{
     padding: 10px;
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
 header nav a, main a{
@@ -32,6 +32,7 @@ header nav a, main a{
     padding: 10px;
     border-radius: 10px;
     font-weight: bolder;
+    box-shadow: 5px 5px 15px #00000099;
 }
 
 nav a:hover, main a:hover{

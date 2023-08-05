@@ -1,6 +1,8 @@
 .carr img{
     width: 90%;
-}
+    border-radius: 15px;
+    border: 3px solid #0095a0;
+    box-shadow: 10px 10px 15px #00000099;}
 
 section{
     display: flex;
@@ -9,9 +11,11 @@ section{
 }
 
 .carr{
+    min-height: 70vh;
     color: black;
     padding: 25px 0;
     background-color: white;
+    border-top: 2px dashed #ff9900;
 }
 
 .hero{
@@ -19,6 +23,17 @@ section{
     background-image: linear-gradient(#00000088, #00000088), url('../cataratas2.jpg');
     background-repeat: no-repeat;
 }
+
+.hero-img{
+    display: none;
+    max-width: 700px;
+    min-width: 400px;
+    width: 50%;
+    border-radius: 15px;
+    border: 3px solid #0095a0;
+    box-shadow: 10px 10px 15px #00000099;
+}
+
 /*main section{
     display: flex;
     flex-direction: column;

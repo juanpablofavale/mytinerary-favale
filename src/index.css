@@ -1,14 +1,52 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   color: white;
 }
-/*body{
-  color: white;
-  background-image: linear-gradient(#5300018e, #5300018e), url('../mapa.avif');
-  background-repeat: no-repeat;
-}*/
+
+@media screen and (min-width: 900px) {
+  .hero, footer{
+    background: #c1a1c9;
+    background: #9daacc;
+  }
+  
+  .carr{
+    background: linear-gradient(#9daacc, #e3e6ee, #9daacc);
+  }
+
+  body {
+    color: black;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  header h1{
+    text-shadow: 5px 5px 5px #0079ca99;
+  }
+
+  .hero-img {
+    display: initial;
+  }
+
+  header nav a,
+  main a {
+    color: #090081;
+    border: 2px solid #0095a0;
+    border: 2px solid #0079ca;
+  }
+
+  header nav a:hover, main a:hover{
+    background-color: #0079ca;
+  }
+
+  .carr, footer{
+    border: none;
+  }
+}

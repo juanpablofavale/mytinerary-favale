@@ -9,6 +9,7 @@ export default function Home() {
             <main>
                 <section className='hero'>
                     <Article title='Find your perfect destination' desc='Our app will help you find the perfect path for your next trip. With an easy-to-use interface and a host of itinerary options, planning your next trip has never been easier.'/>
+                    <img className='hero-img' src="../cataratas.jpg" alt="cataratas" />
                 </section>
                 <section className='carr'>
                     <article>
