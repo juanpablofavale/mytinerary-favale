@@ -53,4 +53,37 @@ body {
   .carr, footer{
     border: none;
   }
+
+  .contenedor div{
+    flex-direction: row;
+  }
+  
+  .carousel div p{
+    bottom: 15px;
+    position: absolute;
+    width: 100%;
+    color: white;
+    padding: 5px;
+    background-color: #0079ca88;
+  }
+  
+  .btn-pc{
+    display: initial;
+  }
+  
+  div.cont-btn-mobile{
+    display: none;
+  }
+
+  .carousel{
+    flex-direction: row;
+  }
+
+  .contenedor{
+    order: initial;
+  }
+
+  .carousel button{
+    order: initial;
+  }
 }

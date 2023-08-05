@@ -14,11 +14,6 @@
 }
 
 .carousel div p{
-    bottom: 15px;
-    width: 100%;
-    position: absolute;
-    background-color: #0088ff99;
-    color: white;
-    padding: 10px;
-    font-weight: bolder;
+    color: #090081;
+    margin-bottom: 20px;
 }
