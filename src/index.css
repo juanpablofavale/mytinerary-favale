@@ -18,6 +18,10 @@ body {
     background: linear-gradient(#9daacc, #e3e6ee, #9daacc);
   }
 
+  .carr img{
+    border: 3px solid #0095a0;
+  }
+
   body {
     color: black;
   }
