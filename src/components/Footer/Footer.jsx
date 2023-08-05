@@ -4,7 +4,7 @@ import './footer.css'
 export default function Footer() {
   return (
     <footer>
-        <p>Reservados todos los derechos</p>
+        <p>© 2023 by Juan Pablo Favale</p>
     </footer>
   )
 }
