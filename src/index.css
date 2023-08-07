@@ -8,6 +8,13 @@ body {
   color: white;
 }
 
+@media screen and (max-height: 600px){
+  section{
+    align-items: end;
+    padding-bottom: 20px;
+  }
+}
+
 @media screen and (min-width: 900px) {
   .hero, footer{
     background: #c1a1c9;
@@ -61,7 +68,7 @@ body {
   .carousel div p{
     bottom: 15px;
     position: absolute;
-    width: 100%;
+    width: 90%;
     color: white;
     padding: 5px;
     background-color: #0079ca88;
