@@ -7,9 +7,9 @@
 }
 
 header{
-  width: 100%;
-  position: absolute;
+  min-height: 20vh;
   padding: 20px;
+  background-color: #00000027;
 }
 
 header h1{
@@ -54,7 +54,7 @@ a:hover{
 }
 
 .hero{
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -167,6 +167,20 @@ footer{
 
 footer p{
   text-align: center;
+}
+
+@media screen and (max-height: 600px){
+  header{
+    padding: 10px;
+  }
+
+  .hero{
+    padding: 0 10px;
+  }
+
+  .hero-art{
+    gap: 10px;
+  }
 }
 
 @media screen and (min-width: 800px){
