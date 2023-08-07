@@ -8,10 +8,33 @@ body {
   color: white;
 }
 
+@media screen and (max-width: 330px) {
+  header h1{
+    font-size: 30px;
+  }
+  header img{
+    width: 80px;
+  }
+}
+
 @media screen and (max-height: 600px){
   section{
     align-items: end;
     padding-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 460px) {
+  .carr img{
+    width: 400px;
+    height: 270px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .carr img{
+    width: 650px;
+    height: 400px;
   }
 }
 
@@ -27,6 +50,8 @@ body {
 
   .carr img{
     border: 3px solid #0095a0;
+    width: 100%;
+    height: 200px;
   }
 
   body {
@@ -68,7 +93,7 @@ body {
   .carousel div p{
     bottom: 15px;
     position: absolute;
-    width: 90%;
+    width: 100%;
     color: white;
     padding: 5px;
     background-color: #0079ca88;
@@ -92,5 +117,29 @@ body {
 
   .carousel button{
     order: initial;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .carr img{
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .carousel{
+    max-width: 1300px;
+  }
+  .carr img{
+    height: 350px;
+    max-width: 600px;
+  }
+  .carr article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel div p{
+    max-width: 600px;
   }
 }
