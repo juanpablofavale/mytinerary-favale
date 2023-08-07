@@ -5,10 +5,11 @@ import "./LayoutMain.css";
 export default function LayoutMain({ children }) {
   return (
     <>
+      <div className="background"></div>
       <header>
-        <div>
+        <div className="title">
           <img src="./itinerario.webp" alt="logo" />
-          <h1>My Tinerary</h1>
+          <h1>MyTinerary</h1>
         </div>
         <NavBar />
       </header>
