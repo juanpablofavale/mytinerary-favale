@@ -7,7 +7,7 @@
 }
 
 header{
-  min-height: 20vh;
+  height: 20vh;
   padding: 20px;
   background-color: #00000027;
 }
@@ -54,7 +54,7 @@ a:hover{
 }
 
 .hero{
-  min-height: 80vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
