@@ -1,6 +1,6 @@
 import "./carousel.css";
 import Image from "../Image/Image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 /*import { FcLeft as Back, FcRight as Next } from 'react-icons/fc'*/
 import {
   BiSolidLeftArrowAlt as Back,
@@ -99,17 +99,41 @@ export default function Carousel() {
     ],
   ];
 
-  const min = 0,
-    max = 3;
+  const max = 3;
 
   const [index, setIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false)
 
-  function next() {
+  useEffect(()=>{
+    let interv
+    if (!isPaused){
+      interv = setInterval(()=>{
+        nextSlide()
+      }, 3000)
+      return () => clearInterval(interv)
+    }
+  }, [isPaused, index])
+
+  function pausar(){
+    if (!isPaused){
+      setIsPaused(true)
+    }
+    setTimeout(() => {
+      setIsPaused(false)
+    }, 5000);
+  }
+
+  function nextSlide(){
     if (index == max) {
       setIndex(0);
     } else {
       setIndex(index + 1);
     }
+  }
+
+  function next() {
+    nextSlide()
+    pausar()
   }
 
   function back() {
@@ -118,7 +142,12 @@ export default function Carousel() {
     } else {
       setIndex(index - 1);
     }
+    pausar()
   }
+
+  useEffect(()=>{
+
+  }, [index])
 
   return (
     <div className="carousel">
@@ -131,30 +160,7 @@ export default function Carousel() {
         <button onClick={next}>{">"}</button>
       </div>
       <div className="contenedor">
-        <div className="row">
-          <Image
-            nombre={ciudades[index][0].nombre}
-            url={ciudades[index][0].imgUrl}
-            alt={ciudades[index][0].nombre}
-          />
-          <Image
-            nombre={ciudades[index][1].nombre}
-            url={ciudades[index][1].imgUrl}
-            alt={ciudades[index][1].nombre}
-          />
-        </div>
-        <div className="row">
-          <Image
-            nombre={ciudades[index][2].nombre}
-            url={ciudades[index][2].imgUrl}
-            alt={ciudades[index][2].nombre}
-          />
-          <Image
-            nombre={ciudades[index][3].nombre}
-            url={ciudades[index][3].imgUrl}
-            alt={ciudades[index][3].nombre}
-          />
-        </div>
+        {ciudades[index].map( (ciudad, index) => <Image key={index} nombre={ciudad.nombre} url={ciudad.imgUrl} alt={ciudad.nombre} />)}
       </div>
       <div className="cont-btn-mobile">
         <button onClick={back}>{"<"}</button>
