@@ -1,11 +1,9 @@
 import Anchor from "../Anchor/Anchor"
 
-export default function NavBar() {
+export default function NavBar({links}) {
     return (
         <nav>
-            <Anchor title='Home' link='#' />
-            <Anchor title='Cities' link='#' />
-            <Anchor title='Login' link='#' />
+            {links.map((link, index) => <Anchor key={index} title={link.title} link={link.link} />)}
         </nav>
     )
 }

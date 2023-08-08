@@ -161,12 +161,48 @@ a:hover{
   padding-bottom: 20px;
 }
 
+button{
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.356);
+}
+
+button:hover{
+  color: #ff9900;
+}
+
 footer{
-  padding: 10px;
+  padding: 20px;
+  padding-top: 30px;
 }
 
 footer p{
+  margin-top: 15px;
   text-align: center;
+}
+
+footer .cont, .address, footer, .socNetLnk{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer nav, .sNet{
+  display: flex;
+  gap: 10px;
+}
+
+footer a{
+  text-decoration: none;
+  color: #804343;
+}
+
+footer a:hover{
+  color: #ff9900;
+}
+
+iframe{
+  width: 90%;
 }
 
 @media screen and (max-height: 600px){
@@ -184,6 +220,10 @@ footer p{
 }
 
 @media screen and (min-width: 800px){
+  header{
+    display: flex;
+    justify-content: space-around;
+  }
   .contenedor{
     display: flex;
     gap: 50px;
@@ -191,5 +231,21 @@ footer p{
   }
   .cont-btn-mobile:last-child{
     padding-top: 0px;
+  }
+  footer .cont{
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+  footer .cont > :nth-child(n){
+    width: 33%;
+  }
+  footer nav{
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  iframe{
+    width: 50%;
   }
 }
