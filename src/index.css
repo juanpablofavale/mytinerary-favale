@@ -142,6 +142,7 @@ a:hover{
 .carousel{
   display: flex;
   flex-direction: column;
+  gap: 25px;
 }
 
 button{
@@ -208,9 +209,6 @@ iframe{
     display: flex;
     justify-content: space-around;
   }
-  .carousel{
-    gap: 25px;
-  }
   .contenedor{
     display: flex;
     flex-wrap: wrap;
@@ -219,7 +217,6 @@ iframe{
   }
   .car-img{
     position: relative;
-    border: 1px solid;
     width: 45%;
     display: flex;
     flex-direction: column;
