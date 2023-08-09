@@ -1,7 +1,10 @@
+import { Link } from 'react-router-dom'
 import './anchor.css'
 
 export default function Anchor({title, link}) {
   return (
-    <a href={link}>{title}</a>
+    <>
+      <Link to={link}>{title}</Link>
+    </>
   )
 }

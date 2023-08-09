@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Anchor from "../Anchor/Anchor";
 import './article.css'
 
@@ -6,7 +7,7 @@ export default function Article({title, desc}) {
         <article className="hero-art">
             <h2>{title}</h2>
             <p>{desc}</p>
-            <Anchor link='#' title='See Yourself' />
+            <Link to='/cities'>{'See Yourself'}</Link>
         </article>
     )
 }

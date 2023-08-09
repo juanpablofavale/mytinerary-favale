@@ -1,8 +1,9 @@
+import { Outlet } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBarMain";
 import "./LayoutMain.css";
 
-export default function LayoutMain({ children }) {
+export default function LayoutMain() {
   const socNet = [
     {
       title: 'Facebook',
@@ -21,15 +22,15 @@ export default function LayoutMain({ children }) {
   const navLink = [
     {
       title:'Home',
-      link:'#'
+      link:'/'
     },
     {
       title:'Cities',
-      link:'#'
+      link:'/cities'
     },
     {
       title:'Login',
-      link:'#'
+      link:'/login'
     }
   ]
 
@@ -43,7 +44,7 @@ export default function LayoutMain({ children }) {
         </div>
         <NavBar links={navLink}/>
       </header>
-      {children}
+      <Outlet/>
       <Footer net={socNet} links={navLink}/>
     </>
   );
