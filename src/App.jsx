@@ -9,7 +9,8 @@ const router = createBrowserRouter([
     {path: '/', element: <Home/>},
     {path: 'cities', element:<Cities/>},
     {path: '*', element: <NotFound/>}
-  ]}
+  ]},
+  {path: '*', element: <NotFound/>}
 ])
 
 function App() {
