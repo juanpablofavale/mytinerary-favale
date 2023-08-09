@@ -1,7 +1,14 @@
 .pg404 .hero{
-    background-color: #3d3a3a;
     flex-direction: column;
     gap: 20px;
     color: black;
     background-color: #f6f6f6;
+}
+footer{
+    background-color: #5e22009f;
+    background: linear-gradient(white, #ff5e0073, #ff00046a);
+    background: linear-gradient(#5e22009f, #5800018f);
+    background: linear-gradient(#5300018e, #5300018e);
+    background: linear-gradient(#f6f6f6, #530001c7);
+    background: linear-gradient(#f6f6f6, #000153c7);
 }
