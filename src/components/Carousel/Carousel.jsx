@@ -1,11 +1,5 @@
-import "./carousel.css";
 import Image from "../Image/Image";
 import { useState, useEffect } from "react";
-/*import { FcLeft as Back, FcRight as Next } from 'react-icons/fc'*/
-import {
-  BiSolidLeftArrowAlt as Back,
-  BiSolidRightArrowAlt as Next,
-} from "react-icons/bi";
 
 export default function Carousel() {
   const ciudades = [
@@ -145,18 +139,11 @@ export default function Carousel() {
     pausar()
   }
 
-  useEffect(()=>{
-
-  }, [index])
-
   return (
     <div className="carousel">
       <div className="cont-btn-mobile">
         <button onClick={back}>{"<"}</button>
-        <button onClick={() => {setIndex(0)}}>1</button>
-        <button onClick={() => {setIndex(1)}}>2</button>
-        <button onClick={() => {setIndex(2)}}>3</button>
-        <button onClick={() => {setIndex(3)}}>4</button>
+        {ciudades.map((ciudades, index)=><button onClick={() => {setIndex(index)}}>{index + 1}</button>)}
         <button onClick={next}>{">"}</button>
       </div>
       <div className="contenedor">
@@ -164,10 +151,7 @@ export default function Carousel() {
       </div>
       <div className="cont-btn-mobile">
         <button onClick={back}>{"<"}</button>
-        <button onClick={() => {setIndex(0)}}>1</button>
-        <button onClick={() => {setIndex(1)}}>2</button>
-        <button onClick={() => {setIndex(2)}}>3</button>
-        <button onClick={() => {setIndex(3)}}>4</button>
+        {ciudades.map((ciudades, index)=><button onClick={() => {setIndex(index)}}>{index + 1}</button>)}
         <button onClick={next}>{">"}</button>
       </div>
     </div>

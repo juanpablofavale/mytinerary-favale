@@ -1,5 +1,4 @@
 import React from 'react'
-import './footer.css'
 import Anchor from '../Anchor/Anchor'
 import NavBar from '../NavBar/NavBarMain'
 

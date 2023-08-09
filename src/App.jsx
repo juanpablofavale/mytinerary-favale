@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import './App.css'
 import Home from './pages/Home/Home'
 import Cities from './pages/Cities/Cities'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
@@ -18,10 +16,6 @@ function App() {
   return (
     <>
       <RouterProvider router={router}/>
-      {/*
-        <Home />
-        <Cities />
-      */}
     </>
   )
 }

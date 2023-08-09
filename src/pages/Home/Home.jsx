@@ -1,6 +1,5 @@
 import LayoutMain from '../LayoutMain/LayoutMain.jsx'
 import Article from '../../components/Article/Article.jsx'
-import './home.css'
 import Carousel from '../../components/Carousel/Carousel.jsx'
 
 export default function Home() {

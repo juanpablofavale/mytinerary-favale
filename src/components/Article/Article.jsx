@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import Anchor from "../Anchor/Anchor";
-import './article.css'
 
 export default function Article({title, desc}) {
     return (
