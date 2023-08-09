@@ -48,9 +48,9 @@ header nav a, .hero a{
     background-color: #ff00b3;
     background-color: #f0f8ffc0;
     box-shadow: 5px 5px 8px #0000007a;
-  }
-  
-  header nav img{
+}
+
+header nav img{
     height: 42px;
     border-radius: 50%;
     border: 2px solid;
