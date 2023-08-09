@@ -1,3 +1,7 @@
 .pg404 .hero{
     background-color: #3d3a3a;
+    flex-direction: column;
+    gap: 20px;
+    color: black;
+    background-color: #f6f6f6;
 }

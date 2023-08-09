@@ -207,7 +207,7 @@ footer a:hover{
 }
 
 iframe{
-  width: 90%;
+  max-width: 90%;
 }
 
 @media screen and (max-height: 600px){
