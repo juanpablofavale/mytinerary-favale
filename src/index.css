@@ -173,7 +173,7 @@ button:hover{
 footer{
   padding: 20px;
   padding-top: 30px;
-  
+  background: linear-gradient(#f6f6f6, #000153c7);
 }
 
 footer p{
