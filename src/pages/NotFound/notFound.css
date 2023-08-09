@@ -4,6 +4,11 @@
     color: black;
     background-color: #f6f6f6;
 }
+
+.pg404 img{
+    width: 270px;
+}
+
 footer{
     background-color: #5e22009f;
     background: linear-gradient(white, #ff5e0073, #ff00046a);
