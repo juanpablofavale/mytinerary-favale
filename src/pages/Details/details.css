@@ -1,0 +1,6 @@
+.pgDetails .hero{
+    background-color: #f6f6f6;
+    color: black;
+    flex-direction: column;
+    gap: 20px;
+}

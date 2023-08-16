@@ -217,6 +217,15 @@ iframe{
   max-width: 90%;
 }
 
+@media screen and (max-width: 400px){
+  header{
+    height: 25vh;
+  }
+  .hero{
+    height: 70vh;
+  }
+}
+
 @media screen and (max-height: 600px){
   header{
     padding: 10px;
@@ -234,6 +243,9 @@ iframe{
   header{
     display: flex;
     justify-content: space-around;
+  }
+  .hero{
+    padding: 50px !important;
   }
   .contenedor{
     display: flex;

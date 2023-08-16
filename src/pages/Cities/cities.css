@@ -1,4 +1,73 @@
 .pgCities .hero{
+    padding: 50px 20px;
+    height: 100%;
+    min-height: 100vh;
     background-color: #f6f6f6;
     color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.pgCities .cards-cont{
+    padding: 50px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.pgCities .search{
+    width: 250px;
+    font-size: 20px;
+    padding: 15px;
+    background-image: url('../lupa.png');
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: right;
+}
+
+.pgCities .card{
+    width: 280px;
+    border: 1px solid;
+    padding: 20px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.336);
+    display: flex;
+    flex-direction: column;
+}
+
+.pgCities .card-header{
+    border-bottom: 2px dashed;
+    padding-bottom: 20px;
+}
+
+.pgCities .card-header img{
+    width: 100%;
+    height: 150px;
+}
+
+.pgCities .card-body{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body h2{
+    font-size: 20px;
+}
+
+.card-body h3{
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.pgCities .card-body a{
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    color: blue;
+    margin-top: 10px;
+}
+
+.pgCities .card-body a:hover{
+    background-color: initial;
 }
