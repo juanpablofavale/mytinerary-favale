@@ -12,11 +12,18 @@ export default function Cities() {
       .then((data) => setDatos(data.response));
   }, []);
 
+  function keyPressHandler(event){
+    if (event.key=="Enter"){
+      alert("ENTER")
+      //Disparar el filtro
+    }
+  }
+
   return (
     <main className="pgCities">
       <div className="hero">
         <div className="srch-img">
-          <input className="search" type="text" />
+          <input onKeyDown={keyPressHandler} className="search" type="text" />
         </div>
         <div className="cards-cont">
           {datos.map((ciudad) => {
