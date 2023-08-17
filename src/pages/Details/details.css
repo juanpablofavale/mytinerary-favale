@@ -3,7 +3,7 @@
     color: black;
     flex-direction: column;
     height: 100%;
-    gap: 50px;
+    gap: 40px;
 }
 
 .pgDetails .hero .under{
@@ -19,25 +19,23 @@
 .pgDetails h2, .pgDetails h3, .pgDetails p{
     text-align: center;
 }
+
 .pgDetails .card{
-border: 1px solid;
-box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.507);
+    width: 85vw;
+    border: 1px solid;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.507);
 }
 
-
 .pgDetails .card img{
-    max-width: 600px;
-    max-height: 400px;
-    aspect-ratio: 16/9;
     width: 100%;
+    aspect-ratio: 16/11;
+    height: 100%;
     object-fit: cover;
 }
 
 .pgDetails .data{
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding: 30px;
 }
 
 .pgDetails .inter{
@@ -54,12 +52,29 @@ box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.507);
     margin-left: 30px;
 }
 
+.pgDetails iframe{
+    width: 90%;
+    aspect-ratio: 16/9;
+    align-self: center;
+    margin: 20px 0;
+}
+
 @media screen and (min-width: 1100px){
     .pgDetails .card{
+        width: auto;
         display: flex;
-        align-items: center;
+        align-items: space-between;
+    }
+    .pgDetails .card img{
+        width: 600px;
     }
     .pgDetails .data{
-        min-width: 300px;
+        border-left: 2px dashed;
+        justify-content: space-between;
+        padding: 15px;
     }
-}
+    .pgDetails iframe{
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+    }}

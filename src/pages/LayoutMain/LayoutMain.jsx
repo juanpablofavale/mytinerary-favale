@@ -1,6 +1,7 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBarMain";
+import { useEffect } from "react";
 
 export default function LayoutMain() {
   const socNet = [
@@ -33,12 +34,18 @@ export default function LayoutMain() {
     }
   ]
 
+  let {pathname} = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [pathname]);
+  
   return (
     <>
       <div className="background"></div>
       <header>
         <div className="title">
-          <img src="./itinerario.webp" alt="logo" />
+          <img src="/itinerario.webp" alt="logo" />
           <h1>MyTinerary</h1>
         </div>
         <NavBar links={navLink}/>

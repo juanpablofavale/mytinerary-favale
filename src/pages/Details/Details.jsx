@@ -20,7 +20,12 @@ export default function Details() {
     <main className='pgDetails'>
       <div className="hero">
         <div className="card">
-          <img src={"../."+city.image} alt="city.name" />
+          {city.image ?
+            <img src={"../."+city.image} alt="city.name" />
+            :
+            <></>
+          }
+          
           <div className='data'>
             <h2>{city.name}</h2>
             <h3>{city.state} - {city.country}</h3>
@@ -29,11 +34,12 @@ export default function Details() {
             <ul>
               {
                 city.interests ?
-                city.interests.map(int => <li>{int}</li>)
+                city.interests.map(int => <li key={int}>{int}</li>)
                 :
                 <li>Cargando</li>
               }
             </ul>
+            <iframe src={city.location} loading='lazy'></iframe>
           </div>
         </div>
         <Anchor title="Go Back" link="/cities"/>

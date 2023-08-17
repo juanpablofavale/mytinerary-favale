@@ -19,11 +19,16 @@ export default function Cities() {
     }
   }
 
+  function buttonClick(){
+    alert("Click")
+  }
+
   return (
     <main className="pgCities">
       <div className="hero">
-        <div className="srch-img">
+        <div className="search-cont">
           <input onKeyDown={keyPressHandler} className="search" type="text" />
+          <img onClick={buttonClick} className="srch-img" src="./lupa.png" alt="search" />
         </div>
         <div className="cards-cont">
           {datos.map((ciudad) => {

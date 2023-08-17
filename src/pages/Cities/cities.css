@@ -16,14 +16,21 @@
     justify-content: center;
 }
 
+.pgCities .search-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .pgCities .search{
     width: 250px;
     font-size: 20px;
     padding: 15px;
-    background-image: url('../lupa.png');
-    background-repeat: no-repeat;
-    background-size: 50px;
-    background-position: right;
+}
+
+.pgCities .srch-img{
+    width: 50px;
 }
 
 .pgCities .card{
