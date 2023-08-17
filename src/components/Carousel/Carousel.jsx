@@ -1,3 +1,4 @@
+import ButtonBar from "../ButtonBar/ButtonBar";
 import Image from "../Image/Image";
 import { useState, useEffect } from "react";
 
@@ -141,19 +142,11 @@ export default function Carousel() {
 
   return (
     <div className="carousel">
-      <div className="cont-btn-mobile">
-        <button onClick={back}>{"<"}</button>
-        {ciudades.map((ciudades, index)=><button onClick={() => {setIndex(index)}}>{index + 1}</button>)}
-        <button onClick={next}>{">"}</button>
-      </div>
+      <ButtonBar back={back} next={next} set={setIndex} ciudades={ciudades}/>
       <div className="contenedor">
         {ciudades[index].map( (ciudad, index) => <Image key={index} nombre={ciudad.nombre} url={ciudad.imgUrl} alt={ciudad.nombre} />)}
       </div>
-      <div className="cont-btn-mobile">
-        <button onClick={back}>{"<"}</button>
-        {ciudades.map((ciudades, index)=><button onClick={() => {setIndex(index)}}>{index + 1}</button>)}
-        <button onClick={next}>{">"}</button>
-      </div>
+      <ButtonBar back={back} next={next} set={setIndex} ciudades={ciudades}/>
     </div>
   );
 }

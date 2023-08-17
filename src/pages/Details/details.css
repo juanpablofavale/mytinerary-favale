@@ -19,6 +19,11 @@
 .pgDetails h2, .pgDetails h3, .pgDetails p{
     text-align: center;
 }
+.pgDetails .card{
+border: 1px solid;
+box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.507);
+}
+
 
 .pgDetails .card img{
     max-width: 600px;
@@ -32,6 +37,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding: 30px;
 }
 
 .pgDetails .inter{
@@ -52,11 +58,8 @@
     .pgDetails .card{
         display: flex;
         align-items: center;
-        border: 1px solid;
-        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.507);
     }
     .pgDetails .data{
-        padding: 30px;
         min-width: 300px;
     }
 }
