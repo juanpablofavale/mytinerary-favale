@@ -1,13 +1,29 @@
 .pgDetails .hero{
     background-color: #f6f6f6;
     color: black;
+    flex-direction: column;
+    height: 100%;
+    gap: 50px;
+}
+
+.pgDetails .hero .under{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pgDetails .hero .under img{
+    width: 200px;
 }
 
 .pgDetails h2, .pgDetails h3, .pgDetails p{
     text-align: center;
 }
 
-.pgDetails img{
+.pgDetails .card img{
+    max-width: 600px;
+    max-height: 400px;
+    aspect-ratio: 16/9;
     width: 100%;
     object-fit: cover;
 }

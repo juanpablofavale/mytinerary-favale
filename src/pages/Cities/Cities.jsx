@@ -36,7 +36,7 @@ export default function Cities() {
                 <div className="card-body">
                   <h2>{ciudad.name}</h2>
                   <h3>{ciudad.state}</h3>
-                  <Link to={'/cities/details/' + ciudad["_id"]}>Show More</Link>
+                  <Link to={'/details/' + ciudad["_id"]}>Show More</Link>
                 </div>
               </div>
             );

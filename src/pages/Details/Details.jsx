@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./details.css"
 import { useParams } from 'react-router-dom'
+import Anchor from "../../components/Anchor/Anchor"
 
 export default function Details() {
   const [city, setCity] = useState({})
@@ -34,6 +35,10 @@ export default function Details() {
               }
             </ul>
           </div>
+        </div>
+        <Anchor title="Go Back" link="/cities"/>
+        <div className="under">
+          <img src="../../underConst.webp" alt="Under Construction" />
         </div>
       </div>
     </main>
