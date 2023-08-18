@@ -59,6 +59,12 @@
     margin: 20px 0;
 }
 
+@media screen and (max-height: 600px){
+    .pgDetails .card{
+        margin-top: 50px;
+    }
+}
+
 @media screen and (min-width: 1100px){
     .pgDetails .card{
         width: auto;

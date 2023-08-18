@@ -4,34 +4,39 @@ import "./cities.css";
 import { Link } from "react-router-dom";
 
 export default function Cities() {
+  //const urlApi = "http://localhost:3000/api/cities"
+  const urlApi = "http://192.168.1.106:3000/api/cities"
+  
   const [datos, setDatos] = useState([]);
-
+  const [filtro, setFiltro] = useState("");
+  
   useEffect(() => {
-    fetch("http://localhost:3000/api/cities")
+    fetch(urlApi)
       .then((res) => res.json())
       .then((data) => setDatos(data.response));
   }, []);
 
-  function keyPressHandler(event){
-    if (event.key=="Enter"){
-      alert("ENTER")
-      //Disparar el filtro
-    }
+  function filtrar(){
+    fetch(urlApi + "?name=" + filtro)
+      .then((res) => res.json())
+      .then((data) => setDatos(data.response))
   }
 
-  function buttonClick(){
-    alert("Click")
+  function keyPressHandler(event){
+    if (event.key=="Enter"){
+      filtrar()
+    }
   }
 
   return (
     <main className="pgCities">
       <div className="hero">
         <div className="search-cont">
-          <input onKeyDown={keyPressHandler} className="search" type="text" />
-          <img onClick={buttonClick} className="srch-img" src="./lupa.png" alt="search" />
+          <input onChange={event => {setFiltro(event.target.value)}} onKeyDown={keyPressHandler} className="search" type="text" />
+          <img onClick={filtrar} className="srch-img" src="./lupa.png" alt="search" />
         </div>
         <div className="cards-cont">
-          {datos.map((ciudad) => {
+          {datos.length ? datos.map((ciudad) => {
             return (
               <div key={ciudad.name} className="card">
                 <div className="card-header">
@@ -45,7 +50,9 @@ export default function Cities() {
                 </div>
               </div>
             );
-          })}
+          })
+          : <h2>Loading...</h2>
+        }
         </div>
       </div>
     </main>
