@@ -5,7 +5,7 @@ import Anchor from "../../components/Anchor/Anchor"
 
 export default function Details() {
   //const urlApi = "http://localhost:3000/api/cities"
-  const urlApi = "http://192.168.1.106:3000/api/cities"
+  const urlApi = "http://190.97.40.223:3000/api/cities"
 
   const [city, setCity] = useState({})
   const {id} = useParams()

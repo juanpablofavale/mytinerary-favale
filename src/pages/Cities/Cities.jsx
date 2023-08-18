@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 export default function Cities() {
   //const urlApi = "http://localhost:3000/api/cities"
-  const urlApi = "http://192.168.1.106:3000/api/cities"
+  const urlApi = "http://190.97.40.223:3000/api/cities"
   
-  const [datos, setDatos] = useState([]);
+  const [datos, setDatos] = useState("Loading");
   const [filtro, setFiltro] = useState("");
   
   useEffect(() => {
@@ -36,7 +36,10 @@ export default function Cities() {
           <img onClick={filtrar} className="srch-img" src="./lupa.png" alt="search" />
         </div>
         <div className="cards-cont">
-          {datos.length ? datos.map((ciudad) => {
+          { datos=="Loading" ?
+            <h2>Loading...</h2>
+          :
+          datos.length ? datos.map((ciudad) => {
             return (
               <div key={ciudad.name} className="card">
                 <div className="card-header">
@@ -51,7 +54,7 @@ export default function Cities() {
               </div>
             );
           })
-          : <h2>Loading...</h2>
+          : <h2>Cities not Found</h2>
         }
         </div>
       </div>
