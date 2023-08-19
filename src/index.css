@@ -9,7 +9,7 @@
 header{
   height: 20vh;
   padding: 20px;
-  background-color: #00000027;
+  background-color: #00000099;
 }
 
 header h1{
@@ -38,16 +38,17 @@ header nav{
     justify-content: center;
 }
 
-header nav a, .hero a{
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-    border: 2px solid;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #ff00b3;
-    background-color: #f0f8ffc0;
-    box-shadow: 5px 5px 8px #0000007a;
+nav a, .hero a{
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border: none;
+  border-radius: 35px;
+  box-shadow: none;
+  color: white;
+  text-align: center;
+  transition: all .4s;
+  background: linear-gradient(blue, black);
 }
 
 header nav img{
@@ -57,10 +58,6 @@ header nav img{
     box-shadow: 5px 5px 8px #0000007a;
 }
 
-a:hover{
-  background-color: #ffffff;
-}
-
 .hero{
   height: 80vh;
   display: flex;
@@ -68,6 +65,7 @@ a:hover{
   align-items: center;
   padding: 50px;
   background-color: #00000027;
+  background-color: #00000099;
   color: white;
 }
 
@@ -75,7 +73,7 @@ a:hover{
   border: 2px dashed;
   padding: 20px;
   box-shadow: 0 0 15px;
-  background-color: #ffffff0a;
+  background-color: #33e9e054;
 }
 
 .hero-art{

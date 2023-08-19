@@ -27,9 +27,15 @@ export default function Cities() {
     if (filtro.length==0) filtrar()
   },[filtro])
 
+  function borrarFiltro(){
+    setFiltro("")
+  }
+
   function keyPressHandler(event){
     if (event.key=="Enter"){
       filtrar()
+    }else if (event.key=="Escape"){
+      borrarFiltro()
     }
   }
 
@@ -37,7 +43,12 @@ export default function Cities() {
     <main className="pgCities">
       <div className="hero">
         <div className="search-cont">
-          <input onChange={event => {setFiltro(event.target.value)}} onKeyDown={keyPressHandler} className="search" type="text" />
+          {filtro ? 
+            <p onClick={borrarFiltro}>X</p>
+          :
+            <></>
+          }
+          <input placeholder="Search" onChange={event => {setFiltro(event.target.value)}} onKeyDown={keyPressHandler} className="search" type="text" value={filtro} />
           <img onClick={filtrar} className="srch-img" src="./lupa.png" alt="search" />
         </div>
         <div className="cards-cont">
