@@ -1,0 +1,7 @@
+header .title{
+    text-decoration: none;
+}
+
+header .title:hover{
+    background: none;
+}

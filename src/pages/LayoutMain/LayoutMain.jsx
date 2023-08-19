@@ -1,7 +1,8 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBarMain";
 import { useEffect } from "react";
+import './layoutMain.css'
 
 export default function LayoutMain() {
   const socNet = [
@@ -44,10 +45,10 @@ export default function LayoutMain() {
     <>
       <div className="background"></div>
       <header>
-        <div className="title">
+        <Link to="/" className="title">
           <img src="/itinerario.webp" alt="logo" />
           <h1>MyTinerary</h1>
-        </div>
+        </Link>
         <NavBar links={navLink}/>
       </header>
       <Outlet/>

@@ -3,6 +3,7 @@ import Article from '../../components/Article/Article.jsx'
 import Carousel from '../../components/Carousel/Carousel.jsx'
 
 export default function Home() {
+    document.title = "MyTinerary - Home"
     return (
         <main>
             <section className='hero'>

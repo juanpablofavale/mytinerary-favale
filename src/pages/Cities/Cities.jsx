@@ -4,6 +4,7 @@ import "./cities.css";
 import { Link } from "react-router-dom";
 
 export default function Cities() {
+  document.title = "MyTinerary - Cities"
   //const urlApi = "http://localhost:3000/api/cities"
   const urlApi = "http://190.97.40.223:3000/api/cities"
   
@@ -21,6 +22,10 @@ export default function Cities() {
       .then((res) => res.json())
       .then((data) => setDatos(data.response))
   }
+
+  useEffect(()=>{
+    if (filtro.length==0) filtrar()
+  },[filtro])
 
   function keyPressHandler(event){
     if (event.key=="Enter"){
