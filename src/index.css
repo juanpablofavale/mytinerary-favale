@@ -112,7 +112,7 @@ header nav img{
 
 .hero-art p{
   text-align: center;
-  max-width: 350px;
+  max-width: 450px;
 }
 
 .background{
@@ -259,7 +259,6 @@ footer iframe{
   .hero{
     padding: 0 10px;
   }
-
   .hero-art{
     gap: 10px;
   }
@@ -278,6 +277,12 @@ footer iframe{
   }
   .hero{
     padding: 50px !important;
+  }
+  .hero-art h2{
+    font-size: 30px;
+  }
+  .hero-art p{
+    font-size: 20px;
   }
   .contenedor{
     display: flex;
