@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import LayoutMain from "../LayoutMain/LayoutMain";
 import "./cities.css";
 import { Link } from "react-router-dom";
+import CardCity from "../../components/CardCity/CardCity";
 
 export default function Cities() {
   document.title = "MyTinerary - Cities"
@@ -11,6 +12,14 @@ export default function Cities() {
   const [datos, setDatos] = useState("Loading");
   const [filtro, setFiltro] = useState("");
   
+  const cityNotFound = {
+    name: "City Not Found",
+    image:"./notFound.png",
+    interests: [],
+    state: "",
+    _id: "0"
+  }
+
   useEffect(() => {
     fetch(urlApi)
       .then((res) => res.json())
@@ -55,22 +64,8 @@ export default function Cities() {
           { datos=="Loading" ?
             <h2>Loading...</h2>
           :
-          datos.length ? datos.map((ciudad) => {
-            return (
-              <div key={ciudad.name} className="card">
-                <div className="card-header">
-                  <img src={ciudad.image} alt="Castillo Libertad" />
-                  <p>{ciudad.interests[0]}</p>
-                </div>
-                <div className="card-body">
-                  <h2>{ciudad.name}</h2>
-                  <h3>{ciudad.state}</h3>
-                  <Link to={'/details/' + ciudad["_id"]}>Show More</Link>
-                </div>
-              </div>
-            );
-          })
-          : <h2>Cities not Found</h2>
+          datos.length ? datos.map((ciudad) => <CardCity key={ciudad._id} ciudad={ciudad}/>)
+          : <CardCity ciudad={cityNotFound} set={setFiltro}/>
         }
         </div>
       </div>

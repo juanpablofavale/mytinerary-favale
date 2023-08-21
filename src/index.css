@@ -191,6 +191,10 @@ button:hover{
   gap: 25px;
   }
 
+  .carousel .active{
+    background-color: #00ff15;
+  }
+
 footer{
   padding: 20px;
   padding-top: 30px;
@@ -331,7 +335,6 @@ footer iframe{
   .fa-twitter:hover{
       color: #00e2e2;
   }
-
 }
 
 @media screen and (min-width:1100px){

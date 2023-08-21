@@ -142,11 +142,11 @@ export default function Carousel() {
 
   return (
     <div className="carousel">
-      <ButtonBar back={back} next={next} set={setIndex} ciudades={ciudades}/>
+      <ButtonBar back={back} next={next} set={setIndex} ciudades={ciudades} index={index}/>
       <div className="contenedor">
         {ciudades[index].map( (ciudad, index) => <Image key={index} nombre={ciudad.nombre} url={ciudad.imgUrl} alt={ciudad.nombre} />)}
       </div>
-      <ButtonBar back={back} next={next} set={setIndex} ciudades={ciudades}/>
+      <ButtonBar back={back} next={next} set={setIndex} ciudades={ciudades} index={index}/>
     </div>
   );
 }
