@@ -1,6 +1,8 @@
 import React from 'react'
 import Anchor from '../Anchor/Anchor'
 import NavBar from '../NavBar/NavBarMain'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './footer.css';
 
 export default function Footer({net, links}) {
   return (
@@ -12,13 +14,14 @@ export default function Footer({net, links}) {
         </div>
         <div className='socNetLnk'>
           <h2>MyTinerary</h2>
-          <div className='sNet'>
-            {net.map((net, index) => <Anchor key={index} title={net.title} link={net.link} />)}
+          <div className='snet'>
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
           </div>
         </div>
         <NavBar links={links}/>
       </div>
-      <p>© 2023 by Juan Pablo Favale</p>
     </footer>
   )
 }
