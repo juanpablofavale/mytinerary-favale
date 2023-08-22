@@ -3,7 +3,6 @@ import Image from "../Image/Image";
 import { useState, useEffect } from "react";
 
 export default function Carousel() {
-  
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false)
   const [datos, setDatos] = useState([])
