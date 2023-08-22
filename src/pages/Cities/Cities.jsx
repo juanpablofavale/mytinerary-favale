@@ -7,7 +7,7 @@ import CardCity from "../../components/CardCity/CardCity";
 export default function Cities() {
   document.title = "MyTinerary - Cities"
   //const urlApi = "http://localhost:3000/api/cities"
-  const urlApi = "http://190.97.40.223:3000/api/cities"
+  const urlApi = "http://190.97.40.223:3000/api/cities?count=5&pg=0"
   
   const [datos, setDatos] = useState("Loading");
   const [filtro, setFiltro] = useState("");

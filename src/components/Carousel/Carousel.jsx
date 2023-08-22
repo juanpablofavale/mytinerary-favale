@@ -94,17 +94,10 @@ export default function Carousel() {
     ],
   ];
 
-  let max = 3;
-  
+  const max = 3;
+
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false)
-  const [datos, setDatos] = useState([])
-
-  useEffect(()=>{
-    fetch('http://localhost:3000/api/cities?count=4&pg=' + index)
-    .then(res => res.json())
-    .then(data => setDatos(data))
-  }, [,index])
 
   useEffect(()=>{
     let interv
@@ -151,12 +144,7 @@ export default function Carousel() {
     <div className="carousel">
       <ButtonBar back={back} next={next} set={setIndex} ciudades={ciudades} index={index}/>
       <div className="contenedor">
-        {
-          datos.response ? 
-        datos.response?.map( (ciudad, index) => <Image key={index} nombre={ciudad.name} url={ciudad.image} alt={ciudad.name} />)
-        :
-        <></>
-        }
+        {ciudades[index].map( (ciudad, index) => <Image key={index} nombre={ciudad.nombre} url={ciudad.imgUrl} alt={ciudad.nombre} />)}
       </div>
       <ButtonBar back={back} next={next} set={setIndex} ciudades={ciudades} index={index}/>
     </div>
