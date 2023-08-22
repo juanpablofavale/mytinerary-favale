@@ -7,8 +7,8 @@ import ButtonBar from "../../components/ButtonBar/ButtonBar";
 
 export default function Cities() {
   document.title = "MyTinerary - Cities"
-  const urlApi = "http://190.97.40.223:3000/api/cities"
-  //const urlApi = "http://localhost:3000/api/cities"
+  //const urlApi = "http://190.97.40.223:3000/api/cities"
+  const urlApi = "http://localhost:3000/api/cities"
   
   const [datos, setDatos] = useState("Loading");
   const [filtro, setFiltro] = useState("");
