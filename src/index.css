@@ -165,6 +165,7 @@ header nav img{
 
 .cont-btn-mobile{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -182,6 +183,28 @@ header nav img{
   transition: .4s;
 }
 
+.divCpp{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.divCpp label{
+  font-size: 20px;
+}
+
+.divCpp select{
+  padding: 5px;
+  border: none;
+  border-radius: 11px;
+  box-shadow: 15px 15px 15px #11111198, 0 0 5px inset black;
+}
+
+.divCpp select:focus{
+  outline: none;
+}
+
 button:hover{
   background-color: yellowgreen;
 }
@@ -190,11 +213,11 @@ button:hover{
   display: flex;
   flex-direction: column;
   gap: 25px;
-  }
+}
 
-  .carousel .active{
-    background-color: yellowgreen;
-  }
+.active{
+    background-color: yellowgreen !important;
+}
 
 footer{
   padding: 20px;

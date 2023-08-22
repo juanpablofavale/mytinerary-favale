@@ -3,12 +3,14 @@ import Image from "../Image/Image";
 import { useState, useEffect } from "react";
 
 export default function Carousel() {
+  const urlApi = "http://190.97.40.223:3000/api/cities"
+  //const urlApi = 'http://localhost:3000/api/cities'
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false)
   const [datos, setDatos] = useState([])
   
   useEffect(()=>{
-    fetch('http://localhost:3000/api/cities?count=4&pg=' + index)
+    fetch(urlApi + '?count=4&pg=' + index)
     .then(res => res.json())
     .then(data => {
       setDatos(data)
@@ -25,6 +27,14 @@ export default function Carousel() {
     }
   }, [isPaused, index])
 
+  function nextSlide(){
+    if (index == datos.col?.pgCount - 1) {
+      setIndex(0);
+    } else {
+      setIndex(index + 1);
+    }
+  }
+
   function pausar(){
     if (!isPaused){
       setIsPaused(true)
@@ -34,31 +44,9 @@ export default function Carousel() {
     }, 5000);
   }
 
-  function nextSlide(){
-    if (index == datos.col?.pgCount - 1) {
-      setIndex(0);
-    } else {
-      setIndex(index + 1);
-    }
-  }
-
-  function next() {
-    nextSlide()
-    pausar()
-  }
-
-  function back() {
-    if (index == 0) {
-      setIndex(datos.col?.pgCount - 1);
-    } else {
-      setIndex(index - 1);
-    }
-    pausar()
-  }
-
   return (
     <div className="carousel">
-      <ButtonBar back={back} next={next} set={setIndex} ciudades={datos} index={index}/>
+      <ButtonBar pausar={pausar} set={setIndex} datos={datos} index={index}/>
       <div className="contenedor">
         {
           datos.response ? 
@@ -67,7 +55,7 @@ export default function Carousel() {
           <></>
         }
       </div>
-      <ButtonBar back={back} next={next} set={setIndex} ciudades={datos} index={index}/>
+      <ButtonBar pausar={pausar} set={setIndex} datos={datos} index={index}/>
     </div>
   );
 }
