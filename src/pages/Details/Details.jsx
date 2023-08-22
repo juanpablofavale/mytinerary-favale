@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom'
 import Anchor from "../../components/Anchor/Anchor"
 
 export default function Details() {
-  //const urlApi = "http://localhost:3000/api/cities"
-  const urlApi = "http://190.97.40.223:3000/api/cities"
+  //const urlApi = "http://190.97.40.223:3000/api/cities"
+  const urlApi = "http://localhost:3000/api/cities"
   
   const [city, setCity] = useState({})
   const {id} = useParams()
