@@ -50,7 +50,7 @@ export default function Carousel() {
       <div className="contenedor">
         {
           datos.response ? 
-          datos.response?.map( (ciudad, index) => <Image key={index} nombre={ciudad.name} url={ciudad.image} alt={ciudad.name} />)
+          datos.response?.map( (ciudad, index) => <Image key={index} nombre={ciudad.interests[0]} url={ciudad.image} alt={ciudad.name} />)
           :
           <></>
         }
