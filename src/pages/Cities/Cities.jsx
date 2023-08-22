@@ -81,6 +81,7 @@ export default function Cities() {
   }
 
   function selectHandler(evnt){
+    setIndex(0)
     setCount(evnt.target.value)
   }
 
