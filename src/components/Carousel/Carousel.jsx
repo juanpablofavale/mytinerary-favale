@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 
 export default function Carousel() {
   //const urlApi = "http://190.97.40.223:3000/api/cities"
-  //const urlApi = 'http://localhost:3000/api/cities'
-  const urlApi = 'https://mytinerary-back-favale-6sxm-dev.fl0.io/api/cities'
+  const urlApi = 'http://localhost:3000/api/cities'
+  //const urlApi = 'https://mytinerary-back-favale-6sxm-dev.fl0.io/api/cities'
+
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false)
   const [datos, setDatos] = useState([])

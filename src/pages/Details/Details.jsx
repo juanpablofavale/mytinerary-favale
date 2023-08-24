@@ -5,8 +5,8 @@ import Anchor from "../../components/Anchor/Anchor"
 
 export default function Details() {
   //const urlApi = "http://190.97.40.223:3000/api/cities"
-  //const urlApi = "http://localhost:3000/api/cities"
-  const urlApi = 'https://mytinerary-back-favale-6sxm-dev.fl0.io/api/cities'
+  const urlApi = "http://localhost:3000/api/cities"
+  //const urlApi = 'https://mytinerary-back-favale-6sxm-dev.fl0.io/api/cities'
   
   const [city, setCity] = useState({})
   const {id} = useParams()
