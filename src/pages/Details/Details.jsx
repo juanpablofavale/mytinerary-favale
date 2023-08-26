@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./details.css"
 import { useParams } from 'react-router-dom'
 import Anchor from "../../components/Anchor/Anchor"
+import Itinerary from '../../components/Itinerary/Itinerary'
 
 export default function Details() {
   //const urlApi = "http://190.97.40.223:3000/api/cities"
@@ -26,12 +27,13 @@ export default function Details() {
     <main className='pgDetails'>
       <div className="hero">
         <div className="card">
-          {city.image ?
-            <img src={"../."+city.image} alt="city.name" />
-            :
-            <></>
-          }
-          
+          <div className="img">
+            {city.image ?
+              <img src={"../."+city.image} alt="city.name" />
+              :
+              <></>
+            }
+          </div>
           <div className='data'>
             <h2>{city.name}</h2>
             <h3>{city.state} - {city.country}</h3>
@@ -49,6 +51,10 @@ export default function Details() {
           </div>
         </div>
         <Anchor title="Go Back" link="/cities"/>
+        <div className="itineraries">
+          <h2>Itineraries</h2>
+              <Itinerary />
+        </div>
         <div className="under">
           <img src="../../underConst.webp" alt="Under Construction" />
         </div>

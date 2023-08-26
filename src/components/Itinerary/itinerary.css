@@ -1,0 +1,163 @@
+.itinerary{
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    border: px solid;
+    padding: 20px;
+    padding-right: 60px;
+    border-radius: 11px;
+    box-shadow: 10px 10px 10px #0000006e;
+    background-color: #f6f6f6;
+    width: 75vw;
+    min-height: 250px;
+}
+
+.itinerary p{
+    letter-spacing: 1px;
+}
+
+.itinerary p:first-child{
+    margin-bottom: 10px;
+}
+
+.itinerary p:first-child, .itinerary .usr p{
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.itinerary img{
+    width: 100px;
+}
+
+.likes{
+    border: 2px solid green;
+    padding: 5px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 11px;
+    cursor: pointer;
+}
+
+.up, .down{
+    position: absolute;
+    text-shadow: 2px 0px 1px black, -1px 0px 1px black, 1px 0px 1px black;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #000000a7;
+    background-color: yellowgreen;
+    padding: 10px;
+    border-radius: 0px 0px 25px 25px;
+    padding-left: 12px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.527);
+    transition: .2s;
+}
+
+.up:hover, .down:hover{
+    transform: scale(1.1) translate(0, -1px);
+}
+
+.up{
+    border-radius: 25px 25px 0 0;
+}
+
+.hiddenActivities{
+    position: relative;
+    border: 1px solid;
+    z-index: 100;
+    transform: translate(0,-10px);
+    display: none;
+    display: flex;
+    background-color: #f6f6f6;
+    flex-direction: column;
+    width: 75vw;
+    box-shadow: 10px 10px 10px #0000006e;
+    border-radius: 0 0 11px 11px;
+    border-top: 2px dashed;
+}
+
+.activities{
+    display: flex;
+    padding: 20px;
+    gap: 15px;
+}
+
+.commentsContainer{
+    border: 1px solid grey;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.commentsContainer span{
+    padding: 2px 8px;
+    color: white;
+    border-radius: 50%;
+    background-color: rgb(106, 24, 183);
+    width: 5px;
+    height: 5px;
+}
+
+.headerComment img, .newComent img{
+    width: 50px;
+}
+
+.headerComment{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.comment{
+    letter-spacing: 1px;
+}
+
+.newComent{
+    display: flex;
+    margin: 40px 20px 0 20px;
+    gap: 20px;
+}
+
+.input{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    border: 2px solid grey;
+    border-radius: 0 30px 30px 0;
+    background-color: white;
+    padding: 0px 0px 0 10px;
+    align-items: center;
+    box-shadow: 5px 5px 10px #000000a7;
+    position: relative;
+}
+
+.input input{
+    border: none;
+    font-size: 20px;
+    width: 90%;
+}
+
+.input input:focus{
+    outline: none;
+}
+
+.input p{
+    color: green;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    aspect-ratio: 1/1;
+    right: -2px;
+}

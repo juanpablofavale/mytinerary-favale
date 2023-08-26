@@ -66,6 +66,10 @@
     border-radius: 11px;
 }
 
+.pgDetails .itineraries h2{
+    padding: 20px 0;
+}
+
 @media screen and (max-height: 600px){
     .pgDetails .card{
         margin-top: 50px;
@@ -92,4 +96,8 @@
         width: 100%;
         margin: 0;
         margin-top: 10px;
-    }}
+    }
+    .hiddenActivities, .itinerary{
+        width: 938px !important;
+    }
+}
