@@ -1,6 +1,7 @@
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 import ButtonBar from "../ButtonBar/ButtonBar";
 import Image from "../Image/Image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Carousel() {
   //const urlApi = "http://190.97.40.223:3000/api/cities"
@@ -11,6 +12,10 @@ export default function Carousel() {
   const [isPaused, setIsPaused] = useState(false)
   const [datos, setDatos] = useState([])
   
+  // ver como agregar animacion al variar el estado datos
+
+  const [parent, enableAnimations] = useAutoAnimate()
+
   useEffect(()=>{
     fetch(urlApi + '?count=4&pg=' + index)
     .then(res => res.json())
@@ -49,12 +54,10 @@ export default function Carousel() {
   return (
     <div className="carousel">
       <ButtonBar pausar={pausar} set={setIndex} datos={datos} index={index}/>
-      <div className="contenedor">
+      <div className="contenedor" ref={parent}>
         {
-          datos.response ? 
+          datos.response && 
           datos.response?.map( (ciudad, index) => <Image key={index} nombre={ciudad.interests[0]} url={ciudad.image} alt={ciudad.name} />)
-          :
-          <></>
         }
       </div>
       <ButtonBar pausar={pausar} set={setIndex} datos={datos} index={index}/>

@@ -3,21 +3,16 @@ import "./details.css"
 import { useParams } from 'react-router-dom'
 import Anchor from "../../components/Anchor/Anchor"
 import Itinerary from '../../components/Itinerary/Itinerary'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCityById } from '../../redux/actions/citiesActions'
 
 export default function Details() {
-  //const urlApi = "http://190.97.40.223:3000/api/cities"
-  const urlApi = "http://localhost:3000/api/cities"
-  //const urlApi = 'https://mytinerary-back-favale-6sxm-dev.fl0.io/api/cities'
-  
-  const [city, setCity] = useState({})
+  const { city } = useSelector(store => store.citiesReducer)
+  const dispatch = useDispatch()
   const {id} = useParams()
   
   useEffect(() => {
-    fetch(urlApi + '/' + id)
-    .then(res => res.json())
-    .then(data => {
-      setCity(data.response)
-    })
+    dispatch(getCityById(id))
   },[])
   
   document.title = "MyTinerary - Details - " + city.name

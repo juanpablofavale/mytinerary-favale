@@ -4,6 +4,8 @@ import { RouterProvider, createBrowserRouter, useLocation } from 'react-router-d
 import LayoutMain from './pages/LayoutMain/LayoutMain'
 import NotFound from './pages/NotFound/NotFound'
 import Details from './pages/Details/Details'
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
 
 const router = createBrowserRouter([
   {path: '/', element: <LayoutMain />, children:[
@@ -17,7 +19,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router}/>
+      <Provider store={store}>
+        <RouterProvider router={router}/>
+      </Provider>
     </>
   )
 }

@@ -1,0 +1,2 @@
+### recuperar cinco ciudades de la segunda pagina
+GET https://mytinerary-back-favale-6sxm-dev.fl0.io/api/cities?count=5&pg=1
