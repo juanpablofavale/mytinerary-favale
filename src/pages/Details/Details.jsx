@@ -48,7 +48,9 @@ export default function Details() {
         <Anchor title="Go Back" link="/cities"/>
         <div className="itineraries">
           <h2>Itineraries</h2>
-              <Itinerary />
+              {city.itineraries_id?.map(itin => {
+                return <Itinerary key={itin._id} itin={itin}/>
+              })}
         </div>
         <div className="under">
           <img src="../../underConst.webp" alt="Under Construction" />

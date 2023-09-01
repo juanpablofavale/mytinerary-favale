@@ -110,7 +110,7 @@ export default function Cities() {
               }
             </select>
           </div>
-        }        
+        }
         <div className="cards-cont">
           {cities.response?.length ? cities.response.map((ciudad) => <CardCity key={ciudad._id} ciudad={ciudad}/>)
           : <CardCity ciudad={cityNotFound} clearFilter={borrarFiltro}/>

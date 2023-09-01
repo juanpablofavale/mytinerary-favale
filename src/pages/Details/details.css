@@ -67,7 +67,13 @@
 }
 
 .pgDetails .itineraries h2{
-    padding: 20px 0;
+    padding: 10px 0;
+}
+
+.pgDetails .itineraries{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 @media screen and (max-height: 600px){
