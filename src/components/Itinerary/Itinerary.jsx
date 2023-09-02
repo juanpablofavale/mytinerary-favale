@@ -3,15 +3,27 @@ import React, { useState } from 'react'
 import './itinerary.css'
 import Image from '../Image/Image'
 
-
 export default function Itinerary({ itin }) {
+    const notAct = {
+        image: "/comingsoon.jpg",
+        name: "Not Yet Activities"
+    }
+
+    function moneda(){
+        let monedas = ""
+        for (let i = 0; i<itin.price; i++){
+            monedas+="💰"
+        }
+        return monedas
+    }
+
     const [modal, setModal] = useState(false)
     const [iti] = useAutoAnimate({duration:250})
 
     return (
         <div ref={iti}>
             <div className='itinerary'>
-                <h2 className='title'>Title</h2>
+                <h2 className='title'>{itin.name}</h2>
                 <div className="likes">
                     <p className='like'>👍</p>
                     <p>{itin.likes}</p>
@@ -26,11 +38,11 @@ export default function Itinerary({ itin }) {
                 </div>
                 <div className="duration">
                     <p>Duration:</p>
-                    <p>{itin.duration}</p>
+                    <p>{itin.duration} Hs.</p>
                 </div>
                 <div className="price">
                     <p>Price:</p>
-                    <p>{itin.price}</p>
+                    <p>{moneda()}</p>
                 </div>
                 {!modal ?
                     <p className='up' onClick={()=>{setModal(!modal)}}>⇩</p>
@@ -42,25 +54,16 @@ export default function Itinerary({ itin }) {
                 <div className='hiddenActivities'>
                     <h2 className='activityTitle'>Activities</h2>
                     <div className="activities">
-                        <Image nombre="Ushuaia" url="/ushuaia.jpeg" alt="Ushuaia" />
-                        <Image nombre="Ushuaia" url="/ushuaia.jpeg" alt="Ushuaia" />
-                        <Image nombre="Ushuaia" url="/ushuaia.jpeg" alt="Ushuaia" />
+                        {itin.activities_id.length ?
+                            itin.activities_id.map(act => <Image key={act.name} nombre={act.name} url={act.image} alt={act.name} />)
+                            :
+                            <Image nombre={notAct.name} url={notAct.image} alt={notAct.name} />
+                        }
                     </div>
                     <div className='commentsContainer'>
-                        <h2>Comments <span>1</span></h2>
-                        <div className="comments">
-                            <div className="headerComment">
-                                <img src="/usrDef.png" alt="usr" />
-                                <h4>Pepe le Peu</h4>
-                            </div>
-                            <p className='comment'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic expedita earum iusto modi consequatur vitae quam, quae deserunt quos voluptate blanditiis. Perferendis ea reprehenderit dolorum repudiandae fugit eaque necessitatibus incidunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic expedita earum iusto modi consequatur vitae quam, quae deserunt quos voluptate blanditiis. Perferendis ea reprehenderit dolorum repudiandae fugit eaque necessitatibus incidunt.</p>
-                        </div>
-                        <div className="newComent">
-                            <img src="/usrDef.png" alt="usr" />
-                            <div className="input">
-                                <input type="text" />
-                                <p>▶</p>
-                            </div>
+                        <h2>Comments</h2>
+                        <div className="under">
+                            <img src="../../underConst.webp" alt="Under Construction" />
                         </div>
                     </div>
                 </div>

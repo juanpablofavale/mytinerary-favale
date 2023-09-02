@@ -6,13 +6,13 @@
     align-items: center;
     gap: 20px;
     border: 1px solid;
-    padding: 30px 0px 0px 0px;
-    padding-right: 60px;
     border-radius: 11px;
     box-shadow: 10px 10px 10px #0000006e;
     background-color: #f6f6f6;
-    width: 75vw;
     min-height: 150px;
+    flex-direction: column;
+    padding: 50px 0 10px 0px;
+    width: 280px;
 }
 
 .itinerary .title{
@@ -41,7 +41,7 @@
 
 .likes{
     position: absolute;
-    right: 10px;
+    right: 15px;
     top: 10px;
 }
 
@@ -71,7 +71,7 @@
     display: flex;
     background-color: #f6f6f6;
     flex-direction: column;
-    width: 75vw;
+    width: 280px;
     box-shadow: 10px 10px 10px #0000006e;
     border-radius: 0 0 11px 11px;
     border-top: 5px double grey;
@@ -79,13 +79,20 @@
 
 .activities{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 10px 20px;
     gap: 15px;
+}
+
+.activities .car-img{
+    width: 80%;
 }
 
 .activities img{
     border-radius: 5px;
     box-shadow: 0 0 10px green;
+    width: 100%;
 }
 
 .commentsContainer{
@@ -163,4 +170,20 @@
     aspect-ratio: 1/1;
     right: -2px;
     padding-top: 5px;
+}
+
+@media screen and (min-width: 850px){
+    .itinerary{
+        padding: 30px 0px 0px 0px;
+        padding-right: 60px;
+        flex-direction: row;
+        width: 75vw;
+    }
+    .hiddenActivities{
+        flex-direction: column;
+        width: 75vw;
+    }
+    .activities .car-img{
+        width: 30%;
+    }
 }

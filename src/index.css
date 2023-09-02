@@ -278,6 +278,10 @@ footer iframe{
   .hero{
     height: 70vh;
   }
+  .pgDetails .backAnchor{
+    left: 2px;
+    top: 170px;
+  }
 }
 
 @media screen and (max-height: 600px){
@@ -289,6 +293,10 @@ footer iframe{
   }
   .hero-art{
     gap: 10px;
+  }
+  .pgDetails .backAnchor{
+    left: 6px;
+    top: 120px;
   }
 }
 

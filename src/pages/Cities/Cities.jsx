@@ -46,10 +46,8 @@ export default function Cities() {
 
   useEffect(() => {
     search.current.value=filter
-    selectCount.current.value = count
-    if(!cities.response || filter==""){
-      obtenerCities()
-    }
+    if(selectCount.current) selectCount.current.value = count
+    if(!cities.response || filter=="") obtenerCities()
   },[])
   
   function obtenerCities(queries = "?count=" + count + "&pg=" + index){

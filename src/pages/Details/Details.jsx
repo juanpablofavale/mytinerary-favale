@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./details.css"
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Anchor from "../../components/Anchor/Anchor"
 import Itinerary from '../../components/Itinerary/Itinerary'
 import { useDispatch, useSelector } from 'react-redux'
@@ -21,6 +21,9 @@ export default function Details() {
     <>
     <main className='pgDetails'>
       <div className="hero">
+        <Link to="/cities" className='backAnchor'>
+          <img src="/back.png" alt="back" className='backImg'/>
+        </Link>
         <div className="card">
           <div className="img">
             {city.image ?
@@ -45,16 +48,20 @@ export default function Details() {
             <iframe src={city.location} loading='lazy'></iframe>
           </div>
         </div>
-        <Anchor title="Go Back" link="/cities"/>
         <div className="itineraries">
-          <h2>Itineraries</h2>
-              {city.itineraries_id?.map(itin => {
-                return <Itinerary key={itin._id} itin={itin}/>
-              })}
+          {city.itineraries_id?.length ? 
+            <h2>Itineraries</h2>
+            :
+            <>
+              <h2>Not Itineraries Yet</h2>
+              <img src="/notYet.webp" alt="not yet" className='notYet'/>
+            </>
+          }
+          {city.itineraries_id?.map(itin => {
+            return <Itinerary key={itin._id} itin={itin}/>
+          })}
         </div>
-        <div className="under">
-          <img src="../../underConst.webp" alt="Under Construction" />
-        </div>
+        <Anchor title="Go Back" link="/cities"/>
       </div>
     </main>
     </>
