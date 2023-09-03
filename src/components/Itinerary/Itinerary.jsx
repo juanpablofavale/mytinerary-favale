@@ -30,7 +30,7 @@ export default function Itinerary({ itin }) {
                 </div>
                 <div className="usr">
                     <img src={itin.usrImage} alt={itin.usrName} />
-                    <p>{itin.usrName}</p>
+                    <p><span className='by'>by</span> {itin.usrName}</p>
                 </div>
                 <div className="hashtags">
                     <p>Hashtags:</p>

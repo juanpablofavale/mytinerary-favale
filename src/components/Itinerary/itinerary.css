@@ -2,7 +2,7 @@
     z-index: 2;
     position: relative;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
     border: 1px solid;
@@ -11,13 +11,12 @@
     background-color: #f6f6f6;
     min-height: 150px;
     flex-direction: column;
-    padding: 50px 0 10px 0px;
+    padding: 10px 0px 20px 0px;
     width: 280px;
 }
 
 .itinerary .title{
-    position: absolute;
-    width: 100%;
+    width: 70%;
     left: 0;
     top: 0;
 }
@@ -35,14 +34,27 @@
     font-size: 20px;
 }
 
-.itinerary img{
+.itinerary .price{
+    margin-bottom: 60px;
+}
+
+.itinerary .usr{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.itinerary .usr img{
     width: 60px;
+    border-radius: 50%;
 }
 
 .likes{
     position: absolute;
-    right: 15px;
-    top: 10px;
+    left: 15px;
+    bottom: 15px;
 }
 
 .like{
@@ -60,6 +72,10 @@
     color: green;
     text-shadow: 0px 2px 5px #59ff00;
 
+}
+
+.by{
+    font-weight: 100;
 }
 
 .hiddenActivities{
@@ -93,6 +109,7 @@
     border-radius: 5px;
     box-shadow: 0 0 10px green;
     width: 100%;
+    height: 100%;
 }
 
 .commentsContainer{
@@ -174,10 +191,24 @@
 
 @media screen and (min-width: 850px){
     .itinerary{
-        padding: 30px 0px 0px 0px;
-        padding-right: 60px;
+        padding: 50px 60px 20px 30px;
         flex-direction: row;
         width: 75vw;
+    }
+    .itinerary .title{
+        position: absolute;
+        top: 10px;
+        width: 100%;
+    }
+    .itinerary > div{
+        width: 20%;
+    }
+    .likes{
+        width: auto !important;
+        bottom: auto;
+        left: auto;
+        top: 15px;
+        right: 15px;
     }
     .hiddenActivities{
         flex-direction: column;
@@ -185,5 +216,8 @@
     }
     .activities .car-img{
         width: 30%;
+    }
+    .itinerary .price{
+        margin-bottom: 0px;
     }
 }

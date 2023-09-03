@@ -66,8 +66,9 @@
     border-radius: 11px;
 }
 
-.pgDetails .itineraries > h2{
-    color: white;
+.pgDetails .itineraries > h2 {
+    color: #236d23;
+    text-shadow: 0 0 20px #abff00;
 }
 
 .pgDetails .itineraries h2{
