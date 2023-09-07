@@ -3,6 +3,7 @@ import './signUp.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { store } from '../../redux/store'
 import { signUpAsync } from '../../redux/actions/authActions'
+import { Link } from 'react-router-dom'
 
 export default function Signup(){
     const {user, token, message} = useSelector(store => store.authReducer)
@@ -61,6 +62,10 @@ export default function Signup(){
                 <div className="information">
                     <h2>MyTinerary</h2>
                     <h2>SignUp</h2>
+                    <h3>or</h3>
+                    <Link to={"/signin"}>
+                        <h3>SignIn</h3>
+                    </Link>
                 </div>
             </div>
         </div>

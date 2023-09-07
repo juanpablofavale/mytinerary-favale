@@ -67,8 +67,12 @@
     background-position: center;
 }
 
-.pgSignin .information h2{
+.pgSignin .information h2, .pgSignin .information h3{
     text-align: center;
     color: white;
     padding-top: 10px;
+}
+
+.pgSignin .information a h3{
+    color: black;
 }

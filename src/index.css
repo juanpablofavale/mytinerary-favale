@@ -79,6 +79,7 @@ nav a:hover, .hero a:hover{
 
 header nav img{
     position: absolute;
+    width: 30px;
     height: 30px;
     border-radius: 50%;
     right: 0px;

@@ -69,8 +69,12 @@
     background-position: center;
 }
 
-.pgSignUp .information h2{
+.pgSignUp .information h2, .pgSignUp .information h3{
     text-align: center;
     color: white;
     padding-top: 10px;
+}
+
+.pgSignUp .information a h3{
+    color: black;
 }

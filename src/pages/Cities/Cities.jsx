@@ -8,7 +8,7 @@ import ButtonBar from "../../components/ButtonBar/ButtonBar";
 export default function Cities() {
   document.title = "MyTinerary - Cities"
 
-  const {cities, loading, filter, index, count} = useSelector(store => store.citiesReducer)
+  const {cities, loading, filter, index, count, token} = useSelector(store => store.citiesReducer)
   const search = useRef()
   const selectCount = useRef()
   const dispatch = useDispatch()

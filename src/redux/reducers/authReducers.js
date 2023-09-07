@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { signInAsync, signInSync, signUpAsync } from "../actions/authActions";
+import { signInAsync, signInSync, signOutAsync, signUpAsync } from "../actions/authActions";
 
 const initialState = {
     user: {},
@@ -15,6 +15,10 @@ const authReducer = createReducer(initialState, (builder) => builder
     })
     .addCase(signInAsync.fulfilled, (state, action) => {
         const newState = {...state, token:action.payload.token, user: action.payload.response, logged: true}
+        return newState
+    })
+    .addCase(signOutAsync.fulfilled, (state, action) => {
+        const newState = {token: null, user: {}, logged: false, message: "User logged out successfully!"}
         return newState
     })
     .addCase(signInSync, (state, action) => {

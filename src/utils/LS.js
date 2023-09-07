@@ -1,7 +1,6 @@
 const LS = {
     get:(prop) => {
         const value = localStorage.getItem(prop)
-        console.log(value)
         return value
     },
     put:(prop, value) => {

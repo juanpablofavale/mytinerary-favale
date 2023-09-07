@@ -1,12 +1,17 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import Anchor from "../Anchor/Anchor"
 import { Link } from "react-router-dom"
+import { signOutAsync } from "../../redux/actions/authActions"
+import LS from "../../utils/LS"
 
 export default function NavBar({links}) {
-    const {token} = useSelector(store => store.authReducer)
+    const dispatch = useDispatch()
+    const {token, user} = useSelector(store => store.authReducer)
 
     const handleClick = () => {
-        alert("desarrollar el logout")
+        //alert("desarrollar el logout")
+        dispatch(signOutAsync(token))
+        LS.delete('token')
     }
 
     return (
@@ -16,7 +21,7 @@ export default function NavBar({links}) {
             ? 
             <Link className="log" onClick={handleClick}>
                 Logout
-                <img src="/usrDef.png" alt="Default User" />
+                <img src={user.image} alt={user.lastName} />
             </Link>
             :
             <Link to="/signin">
