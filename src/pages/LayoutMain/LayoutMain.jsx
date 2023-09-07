@@ -3,8 +3,14 @@ import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBarMain";
 import { useEffect } from "react";
 import './layoutMain.css'
+import LS from "../../utils/LS";
+import { useDispatch, useSelector } from "react-redux";
+import { signInSync } from "../../redux/actions/authActions";
 
 export default function LayoutMain() {
+  const { token } = useSelector(store => store.authReducer)
+
+  const dispatch = useDispatch()
   const socNet = [
     {
       title: 'Facebook',
@@ -28,12 +34,15 @@ export default function LayoutMain() {
     {
       title:'Cities',
       link:'/cities'
-    },
-    {
-      title:'Login',
-      link:'/login'
     }
   ]
+
+  useEffect(()=>{
+    const token = LS.get('token')
+    if (token){
+      dispatch(signInSync(token))
+    }
+  },[])
 
   let {pathname} = useLocation();
 
