@@ -34,6 +34,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 .pgSignUp .form label{
@@ -56,6 +57,15 @@
     border-radius: 33px;
     margin-top: 20px;
     cursor: pointer;
+}
+
+.pgSignUp select{
+    margin-top: 10px;
+    width: 110px;
+}
+
+.pgSignUp option{
+    width: 100px;
 }
 
 .pgSignUp .information{
