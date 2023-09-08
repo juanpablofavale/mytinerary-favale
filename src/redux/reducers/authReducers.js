@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { signInAsync, signInSync, signOutAsync, signUpAsync } from "../actions/authActions";
+import { signInAsync, signInSync, signOutAsync, signUpAsync, signInAsyncToken } from "../actions/authActions";
 
 const initialState = {
     user: {},
@@ -23,6 +23,10 @@ const authReducer = createReducer(initialState, (builder) => builder
     })
     .addCase(signInSync, (state, action) => {
         const newState = {...state, token: action.payload}
+        return newState
+    })
+    .addCase(signInAsyncToken.fulfilled, (state, action) => {
+        const newState = {...state, token:action.payload.token, user: action.payload.response, logged: true}
         return newState
     })
 )

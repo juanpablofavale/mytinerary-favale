@@ -27,11 +27,7 @@ export default function Signup(){
         }
         dispatch(signUpAsync(data))
     }
-    useEffect(() => {
-        if(message) {
-            alert(message)
-        }
-    },[message])
+
     const handleSubmit = (e) => {
         e.preventDefault()
     }
@@ -42,15 +38,15 @@ export default function Signup(){
                 <div className="form-div">
                     <form className='form' action="" onSubmit={handleSubmit}>
                         <label htmlFor="name">Name:</label>
-                        <input ref={name} type="text" id="name"/>
+                        <input ref={name} type="text" id="name" required/>
                         <label htmlFor="lastName">Last Name:</label>
-                        <input ref={lastName} type="text" id="lastName"/>
+                        <input ref={lastName} type="text" id="lastName" required/>
                         <label htmlFor="email">E-mail:</label>
-                        <input ref={email} type="text" id="email"/>
+                        <input ref={email} type="text" id="email" required/>
                         <label htmlFor="password">Password:</label>
-                        <input ref={password} type="password" id="password"/>
+                        <input ref={password} type="password" id="password" required/>
                         <label htmlFor="imgProfile">Profile Image:</label>
-                        <input ref={image} type="text" id="imgProfile"/>
+                        <input ref={image} type="text" id="imgProfile" required/>
                         <label htmlFor="country">Country:
                         <select ref={country} name="" id="country">
                             <option value="Argentina">Argentina</option>

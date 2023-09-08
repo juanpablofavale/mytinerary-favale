@@ -39,9 +39,9 @@ export default function Signin(){
                 <div className="form-div">
                     <form className='form' action="" onSubmit={handleSubmit}>
                         <label htmlFor="email">E-mail:</label>
-                        <input ref={email} type="text" id="email"/>
+                        <input ref={email} type="text" id="email" required/>
                         <label htmlFor="password">Password:</label>
-                        <input ref={password} type="password" id="password"/>
+                        <input ref={password} type="password" id="password" required/>
                         <input onClick={handleClick} type="submit" value="Login" />
                     </form>
                 </div>

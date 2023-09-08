@@ -5,10 +5,9 @@ import { useEffect } from "react";
 import './layoutMain.css'
 import LS from "../../utils/LS";
 import { useDispatch, useSelector } from "react-redux";
-import { signInSync } from "../../redux/actions/authActions";
+import { signInAsyncToken } from "../../redux/actions/authActions";
 
 export default function LayoutMain() {
-  const { token } = useSelector(store => store.authReducer)
 
   const dispatch = useDispatch()
   const socNet = [
@@ -40,7 +39,7 @@ export default function LayoutMain() {
   useEffect(()=>{
     const token = LS.get('token')
     if (token){
-      dispatch(signInSync(token))
+      dispatch(signInAsyncToken(token))
     }
   },[])
 
