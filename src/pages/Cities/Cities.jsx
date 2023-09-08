@@ -7,7 +7,7 @@ import ButtonBar from "../../components/ButtonBar/ButtonBar";
 import LS from "../../utils/LS";
 
 export default function Cities() {
-  const {token} = useSelector(store => store.authReducer)
+  const {token, logged} = useSelector(store => store.authReducer)
   
   document.title = "MyTinerary - Cities"
 
@@ -15,14 +15,6 @@ export default function Cities() {
   const search = useRef()
   const selectCount = useRef()
   const dispatch = useDispatch()
-
-  useEffect(()=>{
-    if(token){
-        LS.put('token', token)
-    }else{
-        LS.delete('token')
-    }
-  }, [,token])
 
   const cityNotFound = {
     name: "City Not Found",

@@ -9,14 +9,6 @@ export default function Home() {
     const {token} = useSelector(store => store.authReducer)
     document.title = "MyTinerary - Home"
 
-    useEffect(()=>{
-        if(token){
-            LS.put('token', token)
-        }else{
-            LS.delete('token')
-        }
-    }, [token])
-
     return (
         <main>
             <section className='hero'>
