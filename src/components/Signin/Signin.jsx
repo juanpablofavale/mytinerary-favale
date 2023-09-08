@@ -36,10 +36,8 @@ export default function Signin(){
     return(
         <div className="pgSignin">
             <div className="card">
-                <GoogleOAuthProvider clientId="632499211609-ao3pr7jfr9dm4bg5objhnnvmfjt8u36o.apps.googleusercontent.com">
-                    <Google fn={handleGoogle}/>
-                </GoogleOAuthProvider>
                 <div className="form-div">
+                    <h2>SignIn</h2>
                     <form className='form' action="" onSubmit={handleSubmit}>
                         <label htmlFor="email">E-mail:</label>
                         <input ref={email} type="text" id="email" required/>
@@ -47,14 +45,17 @@ export default function Signin(){
                         <input ref={password} type="password" id="password" required/>
                         <input onClick={handleClick} type="submit" value="Login" />
                     </form>
+                    <GoogleOAuthProvider clientId="632499211609-ao3pr7jfr9dm4bg5objhnnvmfjt8u36o.apps.googleusercontent.com">
+                        <Google fn={handleGoogle}/>
+                    </GoogleOAuthProvider>
+                    <div className='signupChange'>
+                        <p>Don't have an account?</p>
+                        <Link to={"/signup"}>
+                            <p>Signup</p>
+                        </Link>
+                    </div>
                 </div>
                 <div className="information">
-                    <h2>MyTinerary</h2>
-                    <h2>SignIn</h2>
-                    <h3>or</h3>
-                    <Link to={"/signup"}>
-                        <h3>SignUp</h3>
-                    </Link>
                 </div>
             </div>
         </div>

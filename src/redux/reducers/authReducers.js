@@ -14,7 +14,7 @@ const authReducer = createReducer(initialState, (builder) => builder
         return newState
     })
     .addCase(signInAsync.fulfilled, (state, action) => {
-        const newState = {...state, token:action.payload.token, user: action.payload.response, logged: true}
+        const newState = {...state, token:action.payload.token, user: action.payload.response, logged: action.payload.logged}
         return newState
     })
     .addCase(signOutAsync.fulfilled, (state, action) => {

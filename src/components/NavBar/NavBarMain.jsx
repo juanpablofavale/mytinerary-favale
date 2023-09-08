@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { signOutAsync, signInAsyncToken } from "../../redux/actions/authActions"
 import LS from "../../utils/LS"
 import { useEffect } from "react"
+import './navbarMain.css'
 
 export default function NavBar({links}) {
     const dispatch = useDispatch()
@@ -33,10 +34,15 @@ export default function NavBar({links}) {
             {links.map((link, index) => <Anchor key={index} title={link.title} link={link.link} />)}
             {token 
             ? 
-            <Link className="log" onClick={handleClick}>
-                Logout
-                <img src={user.image} alt={user.lastName} />
-            </Link>
+            <>
+                <Link className="log" onClick={handleClick}>
+                    Logout
+                </Link>
+                <div className="usrLog">
+                    <img src={user.image} alt={user.lastName} />
+                    <p className="usrName">{user.lastName}</p>
+                </div>
+            </>
             :
             <Link to="/signin">
                 Login

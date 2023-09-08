@@ -2,18 +2,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 5px;
-    left: 5px;
-    padding: 10px 10px;
-    border: 1px solid grey;
-    position: absolute;
+    padding: 10px 20px;
+    border-radius: 11px;
     cursor: pointer;
-    border-radius: 50%;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.372);
+    box-shadow: 5px 5px 10px #0080008d, 0 0 10px inset green;
+    width: 25%;
+    transition: .2s;
 }
 
 .googleButton:hover{
-    background-color: #f4f4f4;
+    background-color: #d4f4d4;
+}
+
+.googleButton:active{
+    transform: translate(0px, 2px);
 }
 
 .googleButton img{

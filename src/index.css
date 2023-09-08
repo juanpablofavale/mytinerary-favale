@@ -40,7 +40,7 @@ header nav{
     justify-content: center;
 }
 
-nav a, .hero a{
+nav a, .hero a, .log{
   min-width: 80px;
   font-size: 16px;
   text-decoration: none;
@@ -69,21 +69,11 @@ nav a:hover, .hero a:hover{
   color: black;
 }
 
-.log{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 35px 5px 20px;
-}
-
 header nav img{
-    position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    right: 0px;
-    border: 1px solid black;
+    object-fit: cover;
 }
 
 .hero{
@@ -319,7 +309,7 @@ footer iframe{
   header nav{
     padding-top: 20px;
   }
-  nav a{
+  nav a, .log{
     min-width: 120px;
   }
   .hero{

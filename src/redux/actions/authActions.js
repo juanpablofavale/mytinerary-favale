@@ -15,11 +15,10 @@ const signUpAsync = createAsyncThunk('signUpAsync', async (data) => {
 const signInAsync = createAsyncThunk('signInAsync', async (data) => {
     try {
         const res = await server.post('/auth/login', data)
-        return res.data
+        return {...res.data, logged:true}
     } catch (error) {
         error.response.data.details?.map(e => alert(e.message))
-        console.log(error)
-        return {}
+        return {logged:false}
     }
 })
 

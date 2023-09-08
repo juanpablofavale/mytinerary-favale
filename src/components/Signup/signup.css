@@ -1,5 +1,6 @@
 .pgSignUp{
-    min-height: 50vh;
+    padding: 40px;
+    min-height: 60vh;
     background-color: #c6c6c6;
     background-color: #8f7e50;
     display: flex;
@@ -10,19 +11,29 @@
 .pgSignUp .card{
     position: relative;
     display: flex;
-    width: 70%;
-    max-width: 700px;
-    height: 400px;
-    border: 1px solid;
-    background-color: white;
+    flex-wrap: wrap;
+    width: 280px;
+    box-shadow: 0 0 25px green;
+}
+
+.pgSignUp .signinChange{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .pgSignUp .form-div{
+    padding: 30px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    gap: 20px;
+    min-width: 280px;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0 0 25px inset;
+    background-color: white;
 }
 
 .pgSignUp .form-div h2{
@@ -34,29 +45,48 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
 .pgSignUp .form label{
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .pgSignUp input{
     border-radius: 11px;
     padding: 5px;
+    box-shadow: 5px 5px 10px #0080008d;
+    outline: none;
+    border: none;
+    transition: .2s;
+}
+
+.pgSignUp input:focus{
+    background-color: #d4f4d4;
 }
 
 .pgSignUp label{
     align-self: flex-start;
     padding-left: 10px;
+    margin-bottom: 5px;
 }
 
 .pgSignUp input[type="submit"]{
     width: 100px;
     padding: 10px 5px;
     border-radius: 33px;
+    border: none;
     margin-top: 20px;
     cursor: pointer;
+    box-shadow: 5px 5px 10px #0080008d, 0 0 10px inset green;
+    transition: .2s;
+}
+
+.pgSignUp input[type="submit"]:hover{
+    background-color: #d4f4d4;
+}
+
+.pgSignUp input[type="submit"]:active{
+    transform: translate(0px, 2px);
 }
 
 .pgSignUp select{
@@ -69,13 +99,13 @@
 }
 
 .pgSignUp .information{
-    width: 40%;
-    border: 1px solid red;
-    height: 100%;
+    width: 100%;
+    min-width: 280px;
     background: url('/tresPicos.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    border-radius: 0px 10px 10px 0px;
 }
 
 .pgSignUp .information h2, .pgSignUp .information h3{
@@ -86,4 +116,16 @@
 
 .pgSignUp .information a h3{
     color: black;
+}
+
+@media screen and (min-width:800px){
+    .pgSignUp .form-div{
+        width: 280px;
+    }
+    .pgSignUp .card{
+        flex-direction: row;
+        flex-wrap: nowrap;
+        min-width: 560px;
+        width: 70%;
+    }
 }
