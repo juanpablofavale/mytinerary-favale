@@ -7,7 +7,6 @@ const signUpAsync = createAsyncThunk('signUpAsync', async (data) => {
         return res.data.response
     } catch (error) {
         error.response.data.details?.map(e => alert(e.message))
-        console.log(error)
         return ""
     }
 })
