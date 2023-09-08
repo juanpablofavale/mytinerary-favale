@@ -8,6 +8,7 @@
 }
 
 .pgSignin .card{
+    position: relative;
     display: flex;
     width: 70%;
     max-width: 700px;

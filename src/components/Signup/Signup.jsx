@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { store } from '../../redux/store'
 import { signUpAsync } from '../../redux/actions/authActions'
 import { Link } from 'react-router-dom'
+import { GoogleOAuthProvider } from '@react-oauth/google'
+import Google from '../Google/Google'
 
 export default function Signup(){
     const {user, token, message} = useSelector(store => store.authReducer)
@@ -16,6 +18,11 @@ export default function Signup(){
     const image = useRef(null)
     const country = useRef(null)
     
+    const handleGoogle = (data) => {
+        const userData = {...data}
+        dispatch(signUpAsync(userData))
+    }
+
     const handleClick = () => {
         const data = {
             email:email.current.value,
@@ -35,6 +42,9 @@ export default function Signup(){
     return (
         <div className="pgSignUp">
             <div className="card">
+                <GoogleOAuthProvider clientId="632499211609-ao3pr7jfr9dm4bg5objhnnvmfjt8u36o.apps.googleusercontent.com">
+                    <Google fn={handleGoogle}/>
+                </GoogleOAuthProvider>
                 <div className="form-div">
                     <form className='form' action="" onSubmit={handleSubmit}>
                         <label htmlFor="name">Name:</label>

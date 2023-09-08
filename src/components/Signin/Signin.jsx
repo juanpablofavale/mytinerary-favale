@@ -4,6 +4,9 @@ import { useEffect, useRef } from 'react'
 import { signInAsync } from '../../redux/actions/authActions'
 import LS from '../../utils/LS'
 import { Link, useNavigate } from 'react-router-dom'
+import { GoogleLogin, GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google'
+import jwtDecode from 'jwt-decode'
+import Google from '../Google/Google'
 
 export default function Signin(){
     const navi = useNavigate()
@@ -23,6 +26,11 @@ export default function Signin(){
         e.preventDefault()
     }
 
+    const handleGoogle = (data) => {
+        const userData = {email: data.email, password: data.password}
+        dispatch(signInAsync(userData))
+    }
+
     const handleClick = () => {
         const data = {
             email: email.current.value,
@@ -36,6 +44,9 @@ export default function Signin(){
     return(
         <div className="pgSignin">
             <div className="card">
+                <GoogleOAuthProvider clientId="632499211609-ao3pr7jfr9dm4bg5objhnnvmfjt8u36o.apps.googleusercontent.com">
+                    <Google fn={handleGoogle}/>
+                </GoogleOAuthProvider>
                 <div className="form-div">
                     <form className='form' action="" onSubmit={handleSubmit}>
                         <label htmlFor="email">E-mail:</label>
