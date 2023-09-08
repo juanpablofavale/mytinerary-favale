@@ -9,18 +9,10 @@ import jwtDecode from 'jwt-decode'
 import Google from '../Google/Google'
 
 export default function Signin(){
-    const navi = useNavigate()
     const {user, token, message} = useSelector(store => store.authReducer)
     const dispatch = useDispatch()
     const email = useRef(null)
     const password = useRef(null)
-
-    useEffect(() => {
-        if (token) {
-            LS.put("token", token)
-            navi('/cities')
-        }
-    }, [token])
     
     const handleSubmit = (e) => {
         e.preventDefault()

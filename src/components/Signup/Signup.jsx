@@ -2,12 +2,13 @@ import { useRef } from 'react'
 import './signUp.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { signUpAsync } from '../../redux/actions/authActions'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import Google from '../Google/Google'
 import * as locale from 'locale-codes';
 
 export default function Signup(){
+    const navi = useNavigate()
     const {user, token, message} = useSelector(store => store.authReducer)
     const dispatch = useDispatch()
 
@@ -21,6 +22,7 @@ export default function Signup(){
     const handleGoogle = (data) => {
         const userData = {...data}
         dispatch(signUpAsync(userData))
+        navi('/signin')
     }
 
     const handleClick = () => {
@@ -33,6 +35,7 @@ export default function Signup(){
             country:country.current.value,
         }
         dispatch(signUpAsync(data))
+        navi('/signin')
     }
 
     const handleSubmit = (e) => {
@@ -44,10 +47,6 @@ export default function Signup(){
         const aux = filt.map(loc => loc.location)
         const unicos = aux.filter((l, i) => aux.indexOf(l) === i)
         return unicos
-    }
-
-    const selected = (name) => {
-        name=="Argentina" ? "selected" : ""
     }
 
     return (
@@ -73,7 +72,7 @@ export default function Signup(){
                             {getCountry().map((loc, i) => <option key={i} value={loc}>{loc}</option>)}
                         </select>
                         </label>
-                        <input onClick={handleClick} type="submit" value="Login" />
+                        <input onClick={handleClick} type="submit" value="Register" />
                     </form>
                 </div>
                 <div className="information">

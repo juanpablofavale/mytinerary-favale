@@ -16,7 +16,7 @@ function App() {
       {path: '/', element: <Home/>},
       {path: '/cities', element: <Cities/>},
       {path: '/details/:id', element: <Details />},
-      {path: '/signin', element: logged ? <Home /> : <Signin />},
+      {path: '/signin', element: logged ? <Cities /> : <Signin />},
       {path: '/signup', element: logged ? <Home /> : <Signup />},
       {path: '*', element: <NotFound/>}
     ]},

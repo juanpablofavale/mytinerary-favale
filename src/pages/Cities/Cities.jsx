@@ -4,14 +4,25 @@ import CardCity from "../../components/CardCity/CardCity";
 import { useDispatch, useSelector } from "react-redux";
 import { setIndexAndCounterSync, getAllCitiesAsync, setFilterSync } from "../../redux/actions/citiesActions";
 import ButtonBar from "../../components/ButtonBar/ButtonBar";
+import LS from "../../utils/LS";
 
 export default function Cities() {
+  const {token} = useSelector(store => store.authReducer)
+  
   document.title = "MyTinerary - Cities"
 
-  const {cities, loading, filter, index, count, token} = useSelector(store => store.citiesReducer)
+  const {cities, loading, filter, index, count} = useSelector(store => store.citiesReducer)
   const search = useRef()
   const selectCount = useRef()
   const dispatch = useDispatch()
+
+  useEffect(()=>{
+    if(token){
+        LS.put('token', token)
+    }else{
+        LS.delete('token')
+    }
+  }, [,token])
 
   const cityNotFound = {
     name: "City Not Found",

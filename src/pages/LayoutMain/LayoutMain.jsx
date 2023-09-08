@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { signInAsyncToken } from "../../redux/actions/authActions";
 
 export default function LayoutMain() {
-
+  const {logged, token} = useSelector(store => store.authReducer)
   const dispatch = useDispatch()
   const socNet = [
     {

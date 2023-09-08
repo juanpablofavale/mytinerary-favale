@@ -9,9 +9,7 @@ export default function NavBar({links}) {
     const {token, user} = useSelector(store => store.authReducer)
 
     const handleClick = () => {
-        //alert("desarrollar el logout")
         dispatch(signOutAsync(token))
-        LS.delete('token')
     }
 
     return (
