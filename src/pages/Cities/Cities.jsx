@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setIndexAndCounterSync, getAllCitiesAsync, setFilterSync } from "../../redux/actions/citiesActions";
 import "./cities.css";
+import { toast } from "react-toastify";
 
 export default function Cities() {
   document.title = "MyTinerary - Cities"

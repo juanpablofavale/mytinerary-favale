@@ -1,5 +1,6 @@
 import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { server } from "../../utils/axios";
+import { toast } from "react-toastify";
 
 const signUpAsync = createAsyncThunk('signUpAsync', async (data) => {
     try {
@@ -14,6 +15,7 @@ const signUpAsync = createAsyncThunk('signUpAsync', async (data) => {
 const signInAsync = createAsyncThunk('signInAsync', async (data) => {
     try {
         const res = await server.post('/auth/login', data)
+        toast("hola")
         return {...res.data, logged:true}
     } catch (error) {
         error.response.data.details?.map(e => alert(e.message))
@@ -33,7 +35,7 @@ const signInAsyncToken = createAsyncThunk('signInAsyncToken', async (data) => {
             headers: {Authorization: 'Bearer ' + data}
         }
         const res = await server.post('/auth/token', null, config)
-        console.log(res.data)
+        toast.success("hola")
         return res.data
     } catch (error) {
         error.response.data.details?.map(e => alert(e.message))

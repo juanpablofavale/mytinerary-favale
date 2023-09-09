@@ -7,6 +7,8 @@ import Details from './pages/Details/Details'
 import { useSelector } from 'react-redux'
 import Signin from './pages/Signin/Signin'
 import Signup from './pages/Signup/Signup'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const { logged } = useSelector(store => store.authReducer)
@@ -25,6 +27,18 @@ function App() {
   return (
     <>
       <RouterProvider router={router}/>
+      <ToastContainer 
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   )
 }

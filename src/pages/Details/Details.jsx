@@ -7,15 +7,16 @@ import { getCityById } from '../../redux/actions/citiesActions'
 import "./details.css"
 
 export default function Details() {
-  document.title = "MyTinerary - Details - " + city.name
-
+  
   const { city } = useSelector(store => store.citiesReducer)
   const dispatch = useDispatch()
   const {id} = useParams()
-
+  
   useEffect(() => {
     dispatch(getCityById(id))
   },[])
+  
+  document.title = "MyTinerary - Details - " + city.name
   
   return (
     <>
