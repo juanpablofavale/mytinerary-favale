@@ -1,15 +1,14 @@
-import { useDispatch, useSelector } from 'react-redux'
-import './signin.css'
-import { useEffect, useRef } from 'react'
+import Google from '../../components/Google/Google.jsx'
+import { useDispatch } from 'react-redux'
+import {  useRef } from 'react'
 import { signInAsync } from '../../redux/actions/authActions'
-import LS from '../../utils/LS'
-import { Link, useNavigate } from 'react-router-dom'
-import { GoogleLogin, GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google'
-import jwtDecode from 'jwt-decode'
-import Google from '../Google/Google'
+import { Link } from 'react-router-dom'
+import { GoogleOAuthProvider } from '@react-oauth/google'
+import './signin.css'
 
 export default function Signin(){
-    const {user, token, message} = useSelector(store => store.authReducer)
+    document.title = "MyTinerary - SignIn"
+
     const dispatch = useDispatch()
     const email = useRef(null)
     const password = useRef(null)
@@ -29,8 +28,6 @@ export default function Signin(){
             password: password.current.value
         }
         dispatch(signInAsync(data))
-        email.current.value=""
-        password.current.value=""
     }
 
     return(

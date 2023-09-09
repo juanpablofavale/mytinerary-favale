@@ -4,10 +4,10 @@ import { server } from "../../utils/axios";
 const signUpAsync = createAsyncThunk('signUpAsync', async (data) => {
     try {
         const res = await server.post('/auth/register', data)
-        return res.data.response
+        return {}
     } catch (error) {
-        error.response.data.details?.map(e => alert(e.message))
-        return ""
+        const errores = error.response.data.details?.map(e => e.message)
+        return errores
     }
 })
 
@@ -21,7 +21,7 @@ const signInAsync = createAsyncThunk('signInAsync', async (data) => {
     }
 })
 
-const signInSync = createAction('signInSync', (data) => {
+const setMessage = createAction('setMessage', (data = "") => {
     return {
         payload: data
     }
@@ -33,9 +33,10 @@ const signInAsyncToken = createAsyncThunk('signInAsyncToken', async (data) => {
             headers: {Authorization: 'Bearer ' + data}
         }
         const res = await server.post('/auth/token', null, config)
+        console.log(res.data)
         return res.data
     } catch (error) {
-        console.log(error)
+        error.response.data.details?.map(e => alert(e.message))
         return {}
     }
 })
@@ -48,9 +49,9 @@ const signOutAsync = createAsyncThunk('signOutAsync', async (data) => {
         const res = await server.post('/auth/logout', null, config)
         return res.data
     } catch (error) {
-        console.log(error)
+        error.response.data.details?.map(e => alert(e.message))
         return {}
     }
 })
 
-export { signUpAsync, signInAsync, signInSync, signOutAsync, signInAsyncToken }
+export { signUpAsync, signInAsync, signOutAsync, signInAsyncToken, setMessage }

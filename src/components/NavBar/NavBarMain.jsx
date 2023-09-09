@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from "react-redux"
 import Anchor from "../Anchor/Anchor"
+import LS from "../../utils/LS"
+import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { signOutAsync, signInAsyncToken } from "../../redux/actions/authActions"
-import LS from "../../utils/LS"
 import { useEffect } from "react"
 import './navbarMain.css'
 
@@ -16,7 +16,7 @@ export default function NavBar({links}) {
             dispatch(signInAsyncToken(local))
         }
     }, [])
-    
+
     useEffect(()=>{
         if (logged){
             LS.put("token", token)
@@ -32,8 +32,8 @@ export default function NavBar({links}) {
     return (
         <nav>
             {links.map((link, index) => <Anchor key={index} title={link.title} link={link.link} />)}
-            {token 
-            ? 
+            {token
+            ?
             <>
                 <Link className="log" onClick={handleClick}>
                     Logout

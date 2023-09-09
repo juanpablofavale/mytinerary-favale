@@ -1,8 +1,8 @@
-import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import React from 'react'
-import './google.css'
+import { useGoogleLogin } from '@react-oauth/google';
 import * as locale from 'locale-codes';
+import './google.css'
 
 export default function Google({fn}) {
 

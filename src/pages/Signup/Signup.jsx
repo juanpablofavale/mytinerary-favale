@@ -1,17 +1,16 @@
+import Google from '../../components/Google/Google'
 import { useRef } from 'react'
-import './signUp.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { signUpAsync } from '../../redux/actions/authActions'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { GoogleOAuthProvider } from '@react-oauth/google'
-import Google from '../Google/Google'
-import * as locale from 'locale-codes';
+import * as locale from 'locale-codes'
+import './signUp.css'
 
 export default function Signup(){
-    const navi = useNavigate()
-    const {user, token, message} = useSelector(store => store.authReducer)
-    const dispatch = useDispatch()
+    document.title = "MyTinerary - SignUp"
 
+    const dispatch = useDispatch()
     const name = useRef(null)
     const lastName = useRef(null)
     const email = useRef(null)
@@ -22,7 +21,6 @@ export default function Signup(){
     const handleGoogle = (data) => {
         const userData = {...data}
         dispatch(signUpAsync(userData))
-        navi('/signin')
     }
 
     const handleClick = () => {
@@ -35,7 +33,6 @@ export default function Signup(){
             country:country.current.value,
         }
         dispatch(signUpAsync(data))
-        navi('/signin')
     }
 
     const handleSubmit = (e) => {
@@ -64,7 +61,7 @@ export default function Signup(){
                         <label htmlFor="password">Password:</label>
                         <input ref={password} type="password" id="password" required/>
                         <label htmlFor="imgProfile">Profile Image:</label>
-                        <input ref={image} type="text" id="imgProfile" required/>
+                        <input ref={image} type="text" id="imgProfile" />
                         <label htmlFor="country">Country:
                         <select ref={country} name="" id="country" defaultValue="Argentina">
                             {getCountry().map((loc, i) => <option key={i} value={loc}>{loc}</option>)}

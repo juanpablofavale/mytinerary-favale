@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import "./details.css"
-import { Link, useParams } from 'react-router-dom'
 import Anchor from "../../components/Anchor/Anchor"
 import Itinerary from '../../components/Itinerary/Itinerary'
+import React, { useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCityById } from '../../redux/actions/citiesActions'
+import "./details.css"
 
 export default function Details() {
+  document.title = "MyTinerary - Details - " + city.name
+
   const { city } = useSelector(store => store.citiesReducer)
   const dispatch = useDispatch()
   const {id} = useParams()
-  
+
   useEffect(() => {
     dispatch(getCityById(id))
   },[])
   
-  document.title = "MyTinerary - Details - " + city.name
-
   return (
     <>
     <main className='pgDetails'>

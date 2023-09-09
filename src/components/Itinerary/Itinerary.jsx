@@ -1,7 +1,7 @@
-import { useAutoAnimate } from '@formkit/auto-animate/react'
-import React, { useState } from 'react'
-import './itinerary.css'
 import Image from '../Image/Image'
+import React, { useState } from 'react'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
+import './itinerary.css'
 
 export default function Itinerary({ itin }) {
     const notAct = {

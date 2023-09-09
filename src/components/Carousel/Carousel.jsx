@@ -1,7 +1,7 @@
 import { server } from "../../utils/axios";
 import ButtonBar from "../ButtonBar/ButtonBar";
 import Image from "../Image/Image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function Carousel() {
   const [index, setIndex] = useState(0);

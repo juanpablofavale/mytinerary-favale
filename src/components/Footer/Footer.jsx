@@ -1,7 +1,5 @@
 import React from 'react'
-import Anchor from '../Anchor/Anchor'
 import NavBar from '../NavBar/NavBarMain'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './footer.css';
 
 export default function Footer({net, links}) {
@@ -15,9 +13,11 @@ export default function Footer({net, links}) {
         <div className='socNetLnk'>
           <h2>MyTinerary</h2>
           <div className='snet'>
-            <i className="fa-brands fa-facebook-f"></i>
-            <i className="fa-brands fa-instagram"></i>
-            <i className="fa-brands fa-twitter"></i>
+            {net.map((n, i) => (
+              <a target='_blank' href={n.link} key={i}>
+                <i className={n.title}></i>
+              </a>
+            ))}
           </div>
         </div>
         <NavBar links={links}/>

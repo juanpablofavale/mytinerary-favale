@@ -1,12 +1,7 @@
-import LayoutMain from '../LayoutMain/LayoutMain.jsx'
 import Article from '../../components/Article/Article.jsx'
 import Carousel from '../../components/Carousel/Carousel.jsx'
-import { useEffect } from 'react'
-import LS from '../../utils/LS.js'
-import { useSelector } from 'react-redux'
 
 export default function Home() {
-    const {token} = useSelector(store => store.authReducer)
     document.title = "MyTinerary - Home"
 
     return (

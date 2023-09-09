@@ -5,8 +5,8 @@ import LayoutMain from './pages/LayoutMain/LayoutMain'
 import NotFound from './pages/NotFound/NotFound'
 import Details from './pages/Details/Details'
 import { useSelector } from 'react-redux'
-import Signin from './components/Signin/Signin'
-import Signup from './components/Signup/Signup'
+import Signin from './pages/Signin/Signin'
+import Signup from './pages/Signup/Signup'
 
 function App() {
   const { logged } = useSelector(store => store.authReducer)

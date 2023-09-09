@@ -1,14 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./cities.css";
 import CardCity from "../../components/CardCity/CardCity";
+import ButtonBar from "../../components/ButtonBar/ButtonBar";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setIndexAndCounterSync, getAllCitiesAsync, setFilterSync } from "../../redux/actions/citiesActions";
-import ButtonBar from "../../components/ButtonBar/ButtonBar";
-import LS from "../../utils/LS";
+import "./cities.css";
 
 export default function Cities() {
-  const {token, logged} = useSelector(store => store.authReducer)
-  
   document.title = "MyTinerary - Cities"
 
   const {cities, loading, filter, index, count} = useSelector(store => store.citiesReducer)

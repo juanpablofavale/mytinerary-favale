@@ -31,7 +31,7 @@ export default function ButtonBar({set, datos, index, pausar}) {
     <>
       <div key={datos.name} className="cont-btn-mobile">
         <button className='back' onClick={back}>{"←"}</button>
-        {paginas.map((pag, index) => pag)}
+        {paginas.map((pag) => pag)}
         <button className='next' onClick={next}>{"→"}</button>
       </div>
     </>

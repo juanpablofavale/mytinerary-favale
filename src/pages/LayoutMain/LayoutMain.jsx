@@ -1,27 +1,27 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBarMain";
-import { useEffect } from "react";
-import './layoutMain.css'
+import Footer from "../../components/Footer/Footer";
 import LS from "../../utils/LS";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signInAsyncToken } from "../../redux/actions/authActions";
+import './layoutMain.css'
 
 export default function LayoutMain() {
   const {logged, token} = useSelector(store => store.authReducer)
   const dispatch = useDispatch()
   const socNet = [
     {
-      title: 'Facebook',
-      link: '#'
+      title: 'fa-brands fa-facebook-f',
+      link: 'https://www.facebook.com/'
     },
     {
-      title: 'Instagram',
-      link: '#'
+      title: 'fa-brands fa-instagram',
+      link: 'https://www.instagram.com/'
     },
     {
-      title: 'Twitter',
-      link: '#'
+      title: 'fa-brands fa-twitter',
+      link: 'https://twitter.com/'
     }
   ]
 
@@ -62,5 +62,5 @@ export default function LayoutMain() {
       <Outlet/>
       <Footer net={socNet} links={navLink}/>
     </>
-  );
+  )
 }
