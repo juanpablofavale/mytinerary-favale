@@ -8,7 +8,9 @@ const signUpAsync = createAsyncThunk('signUpAsync', async (data) => {
         toast.success("User register successfully!")
         return {}
     } catch (error) {
+        console.log(error)
         error.response.data.details?.map(e => toast.error(e.message))
+        toast.error(error.response.data.error)
         return {}
     }
 })
@@ -20,6 +22,7 @@ const signInAsync = createAsyncThunk('signInAsync', async (data) => {
         return {...res.data, logged:true}
     } catch (error) {
         error.response.data.details?.map(e => toast.error(e.message))
+        toast.error(error.response.data.error)
         return {logged:false}
     }
 })
@@ -34,6 +37,7 @@ const signInAsyncToken = createAsyncThunk('signInAsyncToken', async (data) => {
         return {...res.data, logged:true}
     } catch (error) {
         error.response.data.details?.map(e => toast.error(e.message))
+        toast.error(error.response.data.error)
         return {logged:false}
     }
 })
@@ -48,6 +52,7 @@ const signOutAsync = createAsyncThunk('signOutAsync', async (data) => {
         return {...res.data, logged:false}
     } catch (error) {
         error.response.data.details?.map(e => toast.error(e.message))
+        toast.error(error.response.data.error)
         return {}
     }
 })
