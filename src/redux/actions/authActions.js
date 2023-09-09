@@ -1,31 +1,26 @@
-import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import { server } from "../../utils/axios";
 import { toast } from "react-toastify";
 
 const signUpAsync = createAsyncThunk('signUpAsync', async (data) => {
     try {
         const res = await server.post('/auth/register', data)
+        toast.success("User register successfully!")
         return {}
     } catch (error) {
-        const errores = error.response.data.details?.map(e => e.message)
-        return errores
+        error.response.data.details?.map(e => toast.error(e.message))
+        return {}
     }
 })
 
 const signInAsync = createAsyncThunk('signInAsync', async (data) => {
     try {
         const res = await server.post('/auth/login', data)
-        toast("hola")
+        toast.success(`Welcome ${res.data.response.name}!`)
         return {...res.data, logged:true}
     } catch (error) {
-        error.response.data.details?.map(e => alert(e.message))
+        error.response.data.details?.map(e => toast.error(e.message))
         return {logged:false}
-    }
-})
-
-const setMessage = createAction('setMessage', (data = "") => {
-    return {
-        payload: data
     }
 })
 
@@ -35,11 +30,11 @@ const signInAsyncToken = createAsyncThunk('signInAsyncToken', async (data) => {
             headers: {Authorization: 'Bearer ' + data}
         }
         const res = await server.post('/auth/token', null, config)
-        toast.success("hola")
-        return res.data
+        toast.success(`Welcome ${res.data.response.name}!`)
+        return {...res.data, logged:true}
     } catch (error) {
-        error.response.data.details?.map(e => alert(e.message))
-        return {}
+        error.response.data.details?.map(e => toast.error(e.message))
+        return {logged:false}
     }
 })
 
@@ -49,11 +44,12 @@ const signOutAsync = createAsyncThunk('signOutAsync', async (data) => {
             headers: {Authorization: 'Bearer ' + data}
         }
         const res = await server.post('/auth/logout', null, config)
-        return res.data
+        toast.success("User logout successfully!")
+        return {...res.data, logged:false}
     } catch (error) {
-        error.response.data.details?.map(e => alert(e.message))
+        error.response.data.details?.map(e => toast.error(e.message))
         return {}
     }
 })
 
-export { signUpAsync, signInAsync, signOutAsync, signInAsyncToken, setMessage }
+export { signUpAsync, signInAsync, signOutAsync, signInAsyncToken }
