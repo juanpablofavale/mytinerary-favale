@@ -1,5 +1,5 @@
+import BasicNav from '../BasicNav/BasicNav';
 import React from 'react'
-import NavBar from '../NavBar/NavBarMain'
 import './footer.css';
 
 export default function Footer({net, links}) {
@@ -20,7 +20,9 @@ export default function Footer({net, links}) {
             ))}
           </div>
         </div>
-        <NavBar links={links}/>
+        <nav>
+          <BasicNav links={links}/>
+        </nav>
       </div>
     </footer>
   )

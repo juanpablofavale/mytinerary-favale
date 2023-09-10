@@ -59,11 +59,15 @@ nav a, .hero a, .log{
   font-weight: bold;
 }
 
+.log{
+  cursor: pointer;
+}
+
 .hero a{
   min-width: 150px;
 }
 
-nav a:hover, .hero a:hover{
+nav a:hover, .hero a:hover, .log:hover{
   box-shadow: 5px 5px 10px black, 0 0 15px inset black;
   background-color: yellowgreen;
   color: black;
@@ -307,7 +311,7 @@ footer iframe{
     justify-content: space-around;
   }
   header nav{
-    padding-top: 20px;
+    padding-top: 0px;
   }
   nav a, .log{
     min-width: 120px;

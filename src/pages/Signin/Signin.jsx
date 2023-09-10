@@ -5,6 +5,7 @@ import { signInAsync } from '../../redux/actions/authActions'
 import { Link } from 'react-router-dom'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import './signin.css'
+import { toast } from 'react-toastify'
 
 export default function Signin(){
     document.title = "MyTinerary - SignIn"
@@ -17,17 +18,27 @@ export default function Signin(){
         e.preventDefault()
     }
 
-    const handleGoogle = (data) => {
+    const handleGoogle = async (data) => {
         const userData = {email: data.email, password: data.password}
-        dispatch(signInAsync(userData))
+        await toast.promise(
+            dispatch(signInAsync(userData)),
+            {
+                pending: 'Loggin in...'
+            }
+        )
     }
 
-    const handleClick = () => {
+    const handleClick = async () => {
         const data = {
             email: email.current.value,
             password: password.current.value
         }
-        dispatch(signInAsync(data))
+        await toast.promise(
+            dispatch(signInAsync(data)),
+            {
+                pending: 'Loggin in...'
+            }
+        )
     }
 
     return(

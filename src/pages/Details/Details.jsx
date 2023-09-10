@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCityById } from '../../redux/actions/citiesActions'
 import "./details.css"
+import { toast } from "react-toastify"
 
 export default function Details() {
   
@@ -13,7 +14,12 @@ export default function Details() {
   const {id} = useParams()
   
   useEffect(() => {
-    dispatch(getCityById(id))
+    toast.promise(
+      dispatch(getCityById(id)),
+      {
+        pending: "Loaging..."
+      }
+    )
   },[])
   
   document.title = "MyTinerary - Details - " + city.name

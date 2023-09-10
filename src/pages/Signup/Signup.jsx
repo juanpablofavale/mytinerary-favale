@@ -1,9 +1,10 @@
 import Google from '../../components/Google/Google'
-import { useRef } from 'react'
+import { GoogleOAuthProvider } from '@react-oauth/google'
 import { useDispatch } from 'react-redux'
 import { signUpAsync } from '../../redux/actions/authActions'
+import { useRef } from 'react'
+import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
-import { GoogleOAuthProvider } from '@react-oauth/google'
 import * as locale from 'locale-codes'
 import './signUp.css'
 
@@ -20,7 +21,12 @@ export default function Signup(){
     
     const handleGoogle = (data) => {
         const userData = {...data}
-        dispatch(signUpAsync(userData))
+        toast.promise(
+            dispatch(signUpAsync(userData)),
+            {
+                pending: "Loggin up..."
+            }
+        )
     }
 
     const handleClick = () => {
@@ -32,7 +38,12 @@ export default function Signup(){
             image:image.current.value,
             country:country.current.value,
         }
-        dispatch(signUpAsync(data))
+        toast.promise(
+            dispatch(signUpAsync(data)),
+            {
+                pending: "Registering..."
+            }
+        )
     }
 
     const handleSubmit = (e) => {

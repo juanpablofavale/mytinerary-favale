@@ -52,20 +52,25 @@ export default function Cities() {
   },[])
   
   function obtenerCities(queries = "?count=" + count + "&pg=" + index){
-    dispatch(getAllCitiesAsync(queries))
+    toast.promise(
+      dispatch(getAllCitiesAsync(queries)),
+      {
+        pending: "Loading..."
+      }
+    )
   }
 
   function filtrar(){
     dispatch(setFilterSync(search.current.value))
     let query = "?name=" + search.current.value
-    dispatch(getAllCitiesAsync(query))
+    obtenerCities(query)
     dispatch(setIndexAndCounterSync({index: 0, count: 0}))
   }
   
   function borrarFiltro(){
     search.current.value = ''
     dispatch(setFilterSync(''))
-    dispatch(getAllCitiesAsync())
+    obtenerCities()
   }
 
   function keyPressHandler(event){
