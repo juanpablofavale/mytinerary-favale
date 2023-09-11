@@ -17,7 +17,8 @@ export default function Details() {
     toast.promise(
       dispatch(getCityById(id)),
       {
-        pending: "Loaging..."
+        pending: "Loaging...",
+        error:"Error receiving data!"
       }
     )
   },[])

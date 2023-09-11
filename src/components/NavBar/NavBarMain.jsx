@@ -32,7 +32,8 @@ export default function NavBar({links}) {
         await toast.promise(
             dispatch(signOutAsync(token)),
             {
-                pending: 'Loggin out...'
+                pending: 'Loggin out...',
+                error:"Error receiving data!"
             }
         )
         navi('/')

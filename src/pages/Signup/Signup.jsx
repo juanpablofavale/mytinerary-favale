@@ -24,7 +24,8 @@ export default function Signup(){
         toast.promise(
             dispatch(signUpAsync(userData)),
             {
-                pending: "Loggin up..."
+                pending: "Loggin up...",
+                error:"Error receiving data!"
             }
         )
     }
@@ -53,7 +54,8 @@ export default function Signup(){
         toast.promise(
             dispatch(signUpAsync(data)),
             {
-                pending: "Registering..."
+                pending: "Registering...",
+                error:"Error receiving data!"
             }
         )
     }

@@ -55,7 +55,8 @@ export default function Cities() {
     toast.promise(
       dispatch(getAllCitiesAsync(queries)),
       {
-        pending: "Loading..."
+        pending: "Loading...",
+        error:"Error receiving data!"
       }
     )
   }

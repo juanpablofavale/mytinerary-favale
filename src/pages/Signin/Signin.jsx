@@ -23,7 +23,8 @@ export default function Signin(){
         await toast.promise(
             dispatch(signInAsync(userData)),
             {
-                pending: 'Loggin in...'
+                pending: 'Loggin in...',
+                error:"Error receiving data!"
             }
         )
     }
@@ -40,7 +41,8 @@ export default function Signin(){
         await toast.promise(
             dispatch(signInAsync(data)),
             {
-                pending: 'Loggin in...'
+                pending: 'Loggin in...',
+                error:"Error receiving data!"
             }
         )
     }

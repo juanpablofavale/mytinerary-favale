@@ -24,7 +24,9 @@ const getAllCitiesAsync = createAsyncThunk('getAllCitiesAsync', async (queries =
         const res = await server.get("/cities" + queries)
         return res.data
     } catch (error) {
-        console.log(error)
+        error.response.data.details?.map(e => toast.error(e.message))
+        toast.error(error.message)
+        toast.error(error.response.data.error)
         return []
     }
 })
@@ -34,7 +36,8 @@ const getCityById = createAsyncThunk('getCityById', async (id) => {
         const res = await server.get("/cities/" + id)
         return res.data.response
     } catch (error) {
-        console.log(error)
+        error.response.data.details?.map(e => toast.error(e.message))
+        toast.error(error.response.data.error)
         return []
     }
 })
