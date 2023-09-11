@@ -29,7 +29,18 @@ export default function Signup(){
         )
     }
 
+    const isEmpty = (str) => {
+        let res = false
+        str?.map(t => !t.length ? res=true : "")
+        return res
+    }
+
     const handleClick = () => {
+        if(isEmpty([email.current.value, password.current.value, name.current.value, lastName.current.value])){
+            toast.error("Error: Name, Last Name, Email and Password are Required!")
+            return
+        }
+
         const data = {
             email:email.current.value,
             password:password.current.value,
@@ -38,6 +49,7 @@ export default function Signup(){
             image:image.current.value,
             country:country.current.value,
         }
+        
         toast.promise(
             dispatch(signUpAsync(data)),
             {
