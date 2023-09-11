@@ -10,15 +10,16 @@ import Signup from './pages/Signup/Signup'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
-const ProtectedRoute = ({children}) => {
-  const { logged } = useSelector(store => store.authReducer)
-  if (!logged) {
-    return children
-  }
-  return <Navigate to='/' />
-}
 
 function App() {
+  const ProtectedRoute = ({children}) => {
+    const { logged } = useSelector(store => store.authReducer)
+    if (!logged) {
+      return children
+    }
+    return <Navigate to='/' />
+  }
+
   const router = createBrowserRouter([
     {path: '/', element: <LayoutMain />, children:[
       {path: '/', element: <Home />},

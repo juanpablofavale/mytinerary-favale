@@ -1,4 +1,3 @@
-import Anchor from "../Anchor/Anchor"
 import LS from "../../utils/LS"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
@@ -36,7 +35,7 @@ export default function NavBar({links}) {
                 error:"Error receiving data!"
             }
         )
-        navi('/')
+        navi('/', {replace:true})
     }
 
     return (

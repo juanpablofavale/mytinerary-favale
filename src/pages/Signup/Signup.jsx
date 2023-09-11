@@ -4,13 +4,14 @@ import { useDispatch } from 'react-redux'
 import { signUpAsync } from '../../redux/actions/authActions'
 import { useRef } from 'react'
 import { toast } from 'react-toastify'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import * as locale from 'locale-codes'
 import './signUp.css'
 
 export default function Signup(){
     document.title = "MyTinerary - SignUp"
 
+    const navi = useNavigate()
     const dispatch = useDispatch()
     const name = useRef(null)
     const lastName = useRef(null)
@@ -36,7 +37,7 @@ export default function Signup(){
         return res
     }
 
-    const handleClick = () => {
+    const handleClick = async () => {
         if(isEmpty([email.current.value, password.current.value, name.current.value, lastName.current.value])){
             toast.error("Error: Name, Last Name, Email and Password are Required!")
             return
@@ -51,13 +52,14 @@ export default function Signup(){
             country:country.current.value,
         }
         
-        toast.promise(
+        await toast.promise(
             dispatch(signUpAsync(data)),
             {
                 pending: "Registering...",
                 error:"Error receiving data!"
             }
         )
+        navi('/signin', {replace:true})
     }
 
     const handleSubmit = (e) => {
