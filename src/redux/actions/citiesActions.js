@@ -42,4 +42,18 @@ const getCityById = createAsyncThunk('getCityById', async (id) => {
     }
 })
 
-export { getCityById, getCitiesSync, getAllCitiesAsync, setFilterSync, setIndexAndCounterSync}
+const setLike = createAsyncThunk('setLike', async ({id, token}) => {
+    try {
+        const config = {
+            headers: {Authorization: 'Bearer ' + token}
+        }
+        const res = await server.put('/itineraries/like/' + id, null, config)
+        return {...res.data}
+    } catch (error) {
+        error.response.data.details?.map(e => toast.error(e.message))
+        toast.error(error.response.data.error)
+        return {}
+    }
+})
+
+export { getCityById, getCitiesSync, getAllCitiesAsync, setFilterSync, setIndexAndCounterSync, setLike}

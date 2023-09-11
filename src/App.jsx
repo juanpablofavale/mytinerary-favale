@@ -19,8 +19,6 @@ const ProtectedRoute = ({children}) => {
 }
 
 function App() {
-  const { logged, registered } = useSelector(store => store.authReducer)
-
   const router = createBrowserRouter([
     {path: '/', element: <LayoutMain />, children:[
       {path: '/', element: <Home />},

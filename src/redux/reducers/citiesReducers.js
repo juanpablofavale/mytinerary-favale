@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { getCityById, setIndexAndCounterSync, getAllCitiesAsync, getCitiesSync, setFilterSync } from "../actions/citiesActions";
+import { getCityById, setIndexAndCounterSync, getAllCitiesAsync, getCitiesSync, setFilterSync, setLike } from "../actions/citiesActions";
 
 const initialState = {
     cities: [],
@@ -33,6 +33,11 @@ const citiesReducer = createReducer(initialState, (builder) => builder
     })
     .addCase(getCityById.fulfilled, (state, action) => {
         const newState = {...state, city: action.payload}
+        return newState
+    })
+    .addCase(setLike.fulfilled, (state, action) => {
+        const likes = action.payload.response.likes
+        const newState = {...state, likes: likes}
         return newState
     })
 )

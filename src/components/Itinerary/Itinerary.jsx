@@ -1,9 +1,18 @@
 import Image from '../Image/Image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import './itinerary.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
+import { setLike } from '../../redux/actions/citiesActions'
 
 export default function Itinerary({ itin }) {
+    const [likes, setLikes] = useState(itin.likes)
+    const [clase, setClase] = useState("")
+    const {logged, token, user} = useSelector(store => store.authReducer)
+    const {city} = useSelector(store => store.citiesReducer)
+    const dispatch = useDispatch()
+
     const notAct = {
         image: "/comingsoon.jpg",
         name: "Not Yet Activities"
@@ -20,13 +29,30 @@ export default function Itinerary({ itin }) {
     const [modal, setModal] = useState(false)
     const [iti] = useAutoAnimate({duration:250})
 
+    const handleLikeClick = async () => {
+        if (logged){
+            const res = await dispatch(setLike({id:itin._id, token, city}))
+            setLikes(res.payload.response.likes)
+        }else{
+            toast.info("You must be logged in to like!")
+        }
+    }
+    
+    useEffect(()=>{
+        if (likes?.includes(user._id)){
+            setClase("liked")
+        }else{
+            setClase("")
+        }
+    }, [ ,likes])
+
     return (
         <div ref={iti}>
             <div className='itinerary'>
                 <h2 className='title'>{itin.name}</h2>
                 <div className="likes">
-                    <p className='like'>👍</p>
-                    <p>{itin.likes}</p>
+                    <p className={'like ' + clase} onClick={handleLikeClick}>👍</p>
+                    <p>{likes?.length}</p>
                 </div>
                 <div className="usr">
                     <img src={itin.usrImage} alt={itin.usrName} />

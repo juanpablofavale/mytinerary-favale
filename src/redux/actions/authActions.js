@@ -26,10 +26,10 @@ const signInAsync = createAsyncThunk('signInAsync', async (data) => {
     }
 })
 
-const signInAsyncToken = createAsyncThunk('signInAsyncToken', async (data) => {
+const signInAsyncToken = createAsyncThunk('signInAsyncToken', async (token) => {
     try {
         const config = {
-            headers: {Authorization: 'Bearer ' + data}
+            headers: {Authorization: 'Bearer ' + token}
         }
         const res = await server.post('/auth/token', null, config)
         return {...res.data, logged:true}
@@ -40,10 +40,10 @@ const signInAsyncToken = createAsyncThunk('signInAsyncToken', async (data) => {
     }
 })
 
-const signOutAsync = createAsyncThunk('signOutAsync', async (data) => {
+const signOutAsync = createAsyncThunk('signOutAsync', async (token) => {
     try {
         const config = {
-            headers: {Authorization: 'Bearer ' + data}
+            headers: {Authorization: 'Bearer ' + token}
         }
         const res = await server.post('/auth/logout', null, config)
         toast.success("User logout successfully!")

@@ -62,6 +62,10 @@
     cursor: pointer;
 }
 
+.liked{
+    text-shadow: 0 0 10px green, 0 0 10px green, 0 0 10px green;
+}
+
 .up, .down{
     position: absolute;
     bottom: 10px;
