@@ -8,7 +8,6 @@ import { setLike } from '../../redux/actions/citiesActions'
 
 export default function Itinerary({ itin }) {
     const [likes, setLikes] = useState(itin.likes)
-    const [clase, setClase] = useState("")
     const {logged, token, user} = useSelector(store => store.authReducer)
     const {city} = useSelector(store => store.citiesReducer)
     const dispatch = useDispatch()
@@ -38,20 +37,17 @@ export default function Itinerary({ itin }) {
         }
     }
     
-    useEffect(()=>{
-        if (likes?.includes(user._id)){
-            setClase("liked")
-        }else{
-            setClase("")
-        }
-    }, [ ,likes])
-
     return (
         <div ref={iti}>
             <div className='itinerary'>
                 <h2 className='title'>{itin.name}</h2>
                 <div className="likes">
-                    <p className={'like ' + clase} onClick={handleLikeClick}>👍</p>
+                    {likes?.includes(user?._id) 
+                    ?
+                    <p className={'like liked'} onClick={handleLikeClick}>👍</p>
+                    :
+                    <p className={'like'} onClick={handleLikeClick}>👍</p>
+                    }
                     <p>{likes?.length}</p>
                 </div>
                 <div className="usr">
