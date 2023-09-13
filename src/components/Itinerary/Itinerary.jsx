@@ -26,7 +26,7 @@ export default function Itinerary({ itin }) {
                 <h2 className='title'>{itin.name}</h2>
                 <div className="likes">
                     <p className='like'>👍</p>
-                    <p>{itin.likes}</p>
+                    <p>{itin.likes.length}</p>
                 </div>
                 <div className="usr">
                     <img src={itin.usrImage} alt={itin.usrName} />

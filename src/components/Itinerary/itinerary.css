@@ -59,7 +59,6 @@
 
 .like{
     font-weight: 100 !important;
-    cursor: pointer;
 }
 
 .up, .down{
@@ -71,7 +70,6 @@
     transition: .2s;
     color: green;
     text-shadow: 0px 2px 5px #59ff00;
-
 }
 
 .by{
