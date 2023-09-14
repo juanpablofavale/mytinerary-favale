@@ -1,0 +1,49 @@
+Front
+	establecer informacion sobre accion al cargar las ciudades - ok
+	carousel que muestre en que slide esta? - ok
+	cities cards arreglar boton show more - ok
+	cities cards re estilar boton show more - ok
+	cursor pointer en la lupa - ok
+	fetch automatico al vaciar el search - ok
+	cities not found tamaño del hero ?imagen? - ok
+	vinculo en el titulo del header - ok
+	probar botones mas chicos - ok
+	cambiar mensaje de city not found - ok
+	manejar paginacion - ok
+	carousel que tome los datos? - ok
+	pasar precio a cantidad de iconos a seleccionar - ok
+	mejorar cartel que muestra que no hay itinerarios - ok
+	agregar titulo a los itinerarios - ok
+	borrar id del array al borrar itinerario / actividad - ok
+	ver useRef, onInput para el front - ok
+	loguear con google - ok
+	cargar cuenta con google - ok
+	api para paises? locale? - ok
+	cargar el select - ok
+	mejorar estilos de login - ok
+	mejorar estilos de register - ok
+	footer - las redes sociales estan harcodeadas - ok
+	agregar consistencias mediante js a los formularios (validar) - ok
+	manejar mensajes desde las acciones - ok
+	registrar usuario tiene que llevarme a login - ok
+	el dispatch retorna lo que retorna la accion al payload - ok
+	hacer que rerenderice los comentarios al agregar - ok
+	funcion al boton cancelar edicion - ok
+	controlar responsividad en comentarios - ok
+	controlar renderizado de datos al desloguear - ok
+	pasar contraseña de logueo con google a archivo .env - ok
+
+	feedback al usuario por server caido?
+	imagenes distintas en login / register?
+	doble campo de password ?
+	loguear con facebook, instagram o twitter?
+
+
+ver scroll reveal
+
+formik para validar formulario?
+
+
+credenciales de prueba
+asd@asd.com
+Cel2983-
