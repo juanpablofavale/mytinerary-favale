@@ -188,6 +188,7 @@
 
 .comments .derecha{
     margin-left: auto;
+    background-color: #d4f4d4;
 }
 
 .comments .confirm{
@@ -277,5 +278,29 @@
     }
     .itinerary .price{
         margin-bottom: 0px;
+    }
+}
+
+@media screen and (max-width:850px){
+    .comments div{
+        width: 100%;
+        padding: 25px 10px 20px;
+        margin-bottom: 10px;
+    }
+    .comments{
+        padding: 10px;
+    }
+    .newComment{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .newComment input{
+        width: 200px;
+    }
+    .newComment img{
+        width: 50%;
+    }
+    .newComment button{
+        width: 60%;
     }
 }
