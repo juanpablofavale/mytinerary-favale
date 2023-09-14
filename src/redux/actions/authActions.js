@@ -1,23 +1,26 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { server } from "../../utils/axios";
 import { toast } from "react-toastify";
+import LS from "../../utils/LS";
 
 const signUpAsync = createAsyncThunk('signUpAsync', async (data) => {
     try {
         const res = await server.post('/auth/register', data)
+        LS.put('token', res.data.token)
         toast.success("User register successfully! Welcome " + res.data.response.name + "!")
-        return res.data
+        return {...res.data, logged:true}
     } catch (error) {
         toast.error(error.response.data.details)
-        return {}
+        return {logged:false}
     }
 })
 
 const signInAsync = createAsyncThunk('signInAsync', async (data) => {
     try {
         const res = await server.post('/auth/login', data)
+        LS.put('token', res.data.token)
         toast.success(`Welcome ${res.data.response.name}!`)
-        return {...res.data}
+        return {...res.data, logged:true}
     } catch (error) {
         toast.error(error.response.data.details)
         return {logged:false}
@@ -43,6 +46,7 @@ const signOutAsync = createAsyncThunk('signOutAsync', async (token) => {
             headers: {Authorization: 'Bearer ' + token}
         }
         const res = await server.post('/auth/logout', null, config)
+        LS.delete('token')
         toast.success("User logout successfully!")
         return {...res.data, logged:false}
     } catch (error) {

@@ -19,14 +19,6 @@ export default function NavBar({links}) {
         }
     }, [])
 
-    useEffect(()=>{
-        if (logged){
-            LS.put("token", token)
-        }else{
-            LS.delete("token", token)
-        }
-    },[logged])
-
     const handleClick = async () => {
         await toast.promise(
             dispatch(signOutAsync(token)),
@@ -41,15 +33,15 @@ export default function NavBar({links}) {
     return (
         <nav>
             <BasicNav links={links} />
-            {token
+            {logged
             ?
             <>
                 <p className="log" onClick={handleClick}>
                     Logout
                 </p>
                 <div className="usrLog">
-                    <img src={user.image} alt={user.lastName} />
-                    <p className="usrName">{user.lastName}</p>
+                    <img src={user?.image} alt={user?.lastName} />
+                    <p className="usrName">{user?.lastName}</p>
                 </div>
             </>
             :
