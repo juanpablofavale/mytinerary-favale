@@ -75,7 +75,6 @@
     transition: .2s;
     color: green;
     text-shadow: 0px 2px 5px #59ff00;
-
 }
 
 .by{
@@ -124,73 +123,128 @@
     border-radius: 5px;
 }
 
-.commentsContainer span{
-    padding: 2px 8px;
-    color: white;
-    border-radius: 50%;
-    background-color: rgb(106, 24, 183);
-    width: 5px;
-    height: 5px;
+.comments{
+    padding: 40px;
+    padding-bottom: 20px;
+    border: 1px solid;
+    background-color: #6a6a6a;
+    border-radius: 5px;
+    height: 350px;
+    overflow: auto;
+    margin-top: 20px;
 }
 
-.headerComment img, .newComent img{
-    width: 50px;
-}
-
-.headerComment{
-    margin-left: 20px;
+.comments.center{
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+    justify-content: center;
 }
 
-.comment{
-    letter-spacing: 1px;
+.comments.center img{
+    width: 250px;
 }
 
-.newComent{
-    display: flex;
-    margin: 40px 20px 0 20px;
-    gap: 20px;
-}
-
-.input{
-    display: flex;
-    gap: 20px;
-    width: 100%;
-    border: 2px solid grey;
-    border-radius: 0 30px 30px 0;
-    background-color: white;
-    padding: 0px 0px 0 10px;
-    align-items: center;
-    box-shadow: 5px 5px 10px #000000a7;
+.comments div{
     position: relative;
+    padding: 20px;
+    border-radius: 11px;
+    background-color: #f6f6f6;
+    box-shadow: 0 0 10px black;
+    width: 50%;
+    margin-bottom: 20px;
 }
 
-.input input{
-    border: none;
-    font-size: 20px;
-    width: 90%;
+.comments p{
+    text-align: initial !important;
 }
 
-.input input:focus{
+.comments input{
+    width: 100%;
+    padding: 5px;
+}
+
+.comments input:focus{
     outline: none;
 }
 
-.input p{
-    color: green;
-    display: flex;
-    font-size: 30px;
-    justify-content: center;
-    align-items: center;
+.comments .delete{
     position: absolute;
     cursor: pointer;
-    border-radius: 50%;
+    top: 2px;
+    right: 7px;
+    font-size: 20px;
+    color: red;
+}
+
+.comments .edit{
+    position: absolute;
+    cursor: pointer;
+    top: 3px;
+    right: 30px;
+    font-weight: bolder;
+    font-size: 20px;
+    color: blue;
+}
+
+.comments .derecha{
+    margin-left: auto;
+}
+
+.comments .confirm{
+    position: absolute;
+    cursor: pointer;
+    top: 3px;
+    right: 53px;
+    font-weight: bolder;
+    font-size: 20px;
+    color: green;
+}
+
+.newComment{
+    display: flex;
+    margin: 0px 20px 0 20px;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.newComment img{
     width: 50px;
     aspect-ratio: 1/1;
-    right: -2px;
-    padding-top: 5px;
+    object-fit:cover;
+    border-radius: 50px;
+}
+
+.newComment input{
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 20px;
+    height: 52px;
+    border: none;
+    box-shadow: 0 0 10px inset, 5px 5px 10px rgba(0, 0, 0, 0.492);
+    border-radius: 11px;
+    transition: .2s;
+}
+
+.newComment input:focus{
+    outline: none;
+    background-color: #d4f4d4;
+}
+
+.newComment button{
+    font-size: 20px;
+    height: 52px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: 0 0 10px inset, 5px 5px 10px rgba(0, 0, 0, 0.492);
+    border-radius: 11px;
+}
+
+.newComment button:hover{
+    border: none;
 }
 
 @media screen and (min-width: 850px){
