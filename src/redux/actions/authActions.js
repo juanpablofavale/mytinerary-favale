@@ -8,8 +8,7 @@ const signUpAsync = createAsyncThunk('signUpAsync', async (data) => {
         toast.success("User register successfully! Please login now.")
         return {}
     } catch (error) {
-        error.response.data.details?.map(e => toast.error(e.message))
-        toast.error(error.response.data.error)
+        toast.error(error.response.data.details)
         return {}
     }
 })
@@ -20,8 +19,7 @@ const signInAsync = createAsyncThunk('signInAsync', async (data) => {
         toast.success(`Welcome ${res.data.response.name}!`)
         return {...res.data, logged:true}
     } catch (error) {
-        error.response.data.details?.map(e => toast.error(e.message))
-        toast.error(error.response.data.error)
+        toast.error(error.response.data.details)
         return {logged:false}
     }
 })
@@ -34,8 +32,7 @@ const signInAsyncToken = createAsyncThunk('signInAsyncToken', async (token) => {
         const res = await server.post('/auth/token', null, config)
         return {...res.data, logged:true}
     } catch (error) {
-        error.response.data.details?.map(e => toast.error(e.message))
-        toast.error(error.response.data.error)
+        toast.error(error.response.data.details)
         return {logged:false}
     }
 })
@@ -49,8 +46,7 @@ const signOutAsync = createAsyncThunk('signOutAsync', async (token) => {
         toast.success("User logout successfully!")
         return {...res.data, logged:false}
     } catch (error) {
-        error.response.data.details?.map(e => toast.error(e.message))
-        toast.error(error.response.data.error)
+        toast.error(error.response.data.details)
         return {}
     }
 })

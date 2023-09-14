@@ -30,7 +30,7 @@ export default function Signin(){
     }
 
     const handleClick = async () => {
-        if (email.current.value == "" || password.current.value == "" || email.current.value.indexOf("@") == -1 || password.current.value.length < 5){
+        if (email.current.value == "" || password.current.value == "" || email.current.value.indexOf("@") == -1){
             toast.error("Error. Email and Password are required!")
             return
         }
