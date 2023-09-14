@@ -5,25 +5,24 @@ const initialState = {
     user: {},
     token: null,
     message: "",
-    logged: false,
-    registered: false
+    logged: false
 }
 
 const authReducer = createReducer(initialState, (builder) => builder
     .addCase(signUpAsync.fulfilled, (state, action) => {
-        const newState = {...state, message: action.payload, registered: true}
+        const newState = {...state, token:action.payload.token, user: action.payload.response, logged: true}
         return newState
     })
     .addCase(signInAsync.fulfilled, (state, action) => {
-        const newState = {...state, token:action.payload.token, user: action.payload.response, logged: action.payload.logged, registered: false}
+        const newState = {...state, token:action.payload.token, user: action.payload.response, logged: true}
         return newState
     })
     .addCase(signOutAsync.fulfilled, (state, action) => {
-        const newState = {token: null, user: {}, logged: false, message: "User logged out successfully!", registered: false}
+        const newState = {token: null, user: {}, logged: false, message: "User logged out successfully!"}
         return newState
     })
     .addCase(signInAsyncToken.fulfilled, (state, action) => {
-        const newState = {...state, token:action.payload.token, user: action.payload.response, logged: true, registered: false}
+        const newState = {...state, token:action.payload.token, user: action.payload.response, logged: true}
         return newState
     })
 )

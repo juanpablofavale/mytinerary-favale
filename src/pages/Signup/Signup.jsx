@@ -59,7 +59,6 @@ export default function Signup(){
                 error:"Error receiving data!"
             }
         )
-        navi('/signin', {replace:true})
     }
 
     const handleSubmit = (e) => {

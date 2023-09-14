@@ -5,8 +5,8 @@ import { toast } from "react-toastify";
 const signUpAsync = createAsyncThunk('signUpAsync', async (data) => {
     try {
         const res = await server.post('/auth/register', data)
-        toast.success("User register successfully! Please login now.")
-        return {}
+        toast.success("User register successfully! Welcome " + res.data.response.name + "!")
+        return res.data
     } catch (error) {
         toast.error(error.response.data.details)
         return {}
@@ -17,7 +17,7 @@ const signInAsync = createAsyncThunk('signInAsync', async (data) => {
     try {
         const res = await server.post('/auth/login', data)
         toast.success(`Welcome ${res.data.response.name}!`)
-        return {...res.data, logged:true}
+        return {...res.data}
     } catch (error) {
         toast.error(error.response.data.details)
         return {logged:false}
