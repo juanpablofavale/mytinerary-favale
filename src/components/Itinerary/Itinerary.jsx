@@ -87,7 +87,7 @@ export default function Itinerary({ itin }) {
     }
     
     return (
-        <div ref={iti}>
+        <div ref={iti} className='contItin'>
             <div className='itinerary'>
                 <h2 className='title'>{itin.name}</h2>
                 <div className="likes">

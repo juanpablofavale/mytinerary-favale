@@ -17,7 +17,7 @@ export default function Google({fn}) {
             const {data} = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", config)
             fn({
                 email:data.email,
-                password: "eC_" + data.sub + "_Ce",
+                password: import.meta.env.VITE_SECRET_OUT + data.sub + import.meta.env.VITE_SECRET_IN,
                 name:data.given_name,
                 lastName:data.family_name,
                 image:data.picture,

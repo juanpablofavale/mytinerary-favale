@@ -96,7 +96,7 @@ export default function Signup(){
                         </label>
                         <input onClick={handleClick} type="submit" value="Register" />
                     </form>
-                    <GoogleOAuthProvider clientId="632499211609-ao3pr7jfr9dm4bg5objhnnvmfjt8u36o.apps.googleusercontent.com">
+                    <GoogleOAuthProvider clientId={import.meta.env.VITE_ID_GOOGLE}>
                         <Google fn={handleGoogle}/>
                     </GoogleOAuthProvider>
                     <div className='signinChange'>
