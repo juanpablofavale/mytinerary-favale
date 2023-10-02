@@ -5,7 +5,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signInAsyncToken } from "../../redux/actions/authActions";
-import './layoutMain.css'
+//import './layoutMain.css'
 
 export default function LayoutMain() {
   const {logged, token} = useSelector(store => store.authReducer)
