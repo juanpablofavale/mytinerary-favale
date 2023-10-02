@@ -6,7 +6,7 @@ import { useRef } from 'react'
 import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom'
 import * as locale from 'locale-codes'
-import './signUp.css'
+import './signup.css'
 
 export default function Signup(){
     document.title = "MyTinerary - SignUp"
