@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
 import { signOutAsync, signInAsyncToken } from "../../redux/actions/authActions"
 import { useEffect } from "react"
-import './navbarMain.css'
+import './navbarmain.css'
 import BasicNav from "../BasicNav/BasicNav"
 import { toast } from "react-toastify"
 
